@@ -6,7 +6,7 @@ import static util.Console.*;
 
 public class Main {
     public static void main(String[] args) {
-        Player p = new Player("");
+        Player p = new Player("Weekend");
         Run r = new Run(p);
     }
 

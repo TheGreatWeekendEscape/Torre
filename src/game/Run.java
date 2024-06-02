@@ -1,16 +1,18 @@
 package game;
 
-import model.Floor;
+import controller.FloorController;
+import model.floor.Floor;
 import model.entity.Player;
+import util.Console;
 
 public class Run {
 
-    private Player p;
+    private Player player;
     private int floorNum;
     private boolean fin;
 
     public Run (Player p) {
-        this.p = p;
+        this.player = p;
         configure();
         play();
     }
@@ -22,7 +24,10 @@ public class Run {
 
     private void play() {
         while (!fin) {
-            Floor f = new Floor(this.floorNum);
+            floorNum++;
+            Console.printBlue("PISO " + floorNum + ":");
+            Floor floor = FloorController.getRandFloor(floorNum);
+            floor.trigger(player);
         }
     }
 }

@@ -11,7 +11,7 @@ public class Player {
     private ArrayList<Move> moves;
 
     public Player(String nombre) {
-        this.nombre = "Weekend";
+        this.nombre = nombre;
         this.hp = 15;
         this.moves = null;
     }
