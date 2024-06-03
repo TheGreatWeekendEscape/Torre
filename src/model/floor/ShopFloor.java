@@ -11,7 +11,8 @@ public class ShopFloor extends Floor {
     }
 
     @Override
-    public void trigger(Player p) {
+    public boolean trigger(Player p) {
         Console.print("Encuentras una tienda", Console.DEFAULT_COLOR);
+        return false;
     }
 }

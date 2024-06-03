@@ -10,7 +10,8 @@ public class Blob extends Enemy {
     void init() {
         super.nombre = "";
         super.dificulty = 1;
-        super.hp = generateHp(15);
+        super.maxHp = generateHp(15);
+        super.hp = maxHp;
         super.gold = generateGold();
         super.representation = generateRepresentation();
         super.spells = generateSpells();

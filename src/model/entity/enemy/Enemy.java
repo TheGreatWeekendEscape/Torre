@@ -23,8 +23,8 @@ public abstract class Enemy extends Entity {
         return rand.nextInt(baseHp - 3, baseHp + 3); //Comprobar que funciona
     }
 
+
     abstract ArrayList<Spell> generateSpells();
     abstract String [] generateRepresentation();
     abstract void init();
-
 }

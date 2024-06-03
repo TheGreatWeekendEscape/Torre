@@ -13,8 +13,12 @@ public class CombatFloor extends Floor{
     }
 
     @Override
-    public void trigger(Player p) {
+    public boolean trigger(Player p) {
         Entity enemy = EntityController.getRandEnemy(super.floorNumber);
+        /**
+         * p.fight(enemy);
+         */
         Console.print("Encuentras un enemigo", Console.DEFAULT_COLOR);
+        return false;
     }
 }

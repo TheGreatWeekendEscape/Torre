@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/EntityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/Fight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/Npc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/enemy/Blob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/spell/Spell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/spell/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/FloorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FloorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/EventFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/EventFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/FountainFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/FountainFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/ShopFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/ShopFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Console.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

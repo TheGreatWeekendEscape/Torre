@@ -11,7 +11,8 @@ public class EventFloor extends Floor{
     }
 
     @Override
-    public void trigger(Player p) {
+    public boolean trigger(Player p) {
         Console.print("Encuentras un evento", Console.DEFAULT_COLOR);
+        return false;
     }
 }

@@ -12,7 +12,7 @@ public abstract class Floor {
         this.floorNumber = floorNum;
     }
 
-    public abstract void trigger(Player p);
+    public abstract boolean trigger(Player p);
 
     public int getProb() {
         return this.prob;
