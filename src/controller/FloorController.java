@@ -1,9 +1,6 @@
 package controller;
 
-import model.floor.CombatFloor;
-import model.floor.EventFloor;
-import model.floor.Floor;
-import model.floor.ShopFloor;
+import model.floor.*;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,6 +14,8 @@ public class FloorController {
         Floor combatFloor = new CombatFloor(floorNum);
         Floor eventFloor = new EventFloor(floorNum);
         Floor shopFloor = new ShopFloor(floorNum);
+        Floor fountainFloor = new FountainFloor(floorNum);
+        floors.add(fountainFloor);
         floors.add(combatFloor);
         floors.add(eventFloor);
         floors.add(shopFloor);

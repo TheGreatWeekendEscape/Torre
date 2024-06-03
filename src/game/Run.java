@@ -25,7 +25,7 @@ public class Run {
     private void play() {
         while (!fin) {
             floorNum++;
-            Console.printBlue("PISO " + floorNum + ":");
+            Console.printBackground("PISO " + floorNum + ":", Console.FLOOR_COLOR, Console.FLOOR_BACKGROUND);
             Floor floor = FloorController.getRandFloor(floorNum);
             floor.trigger(player);
         }

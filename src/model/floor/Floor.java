@@ -1,10 +1,11 @@
 package model.floor;
 
 import model.entity.Player;
+import util.Console;
 
 public abstract class Floor {
 
-    private int floorNumber;
+    protected int floorNumber;
     protected int prob; //Probabilidad sobre 100 de salir
 
     public Floor (int floorNum) {
@@ -17,3 +18,4 @@ public abstract class Floor {
         return this.prob;
     }
 }
+

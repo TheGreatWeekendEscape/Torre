@@ -1,5 +1,7 @@
 package model.floor;
 
+import controller.EntityController;
+import model.entity.Entity;
 import model.entity.Player;
 import util.Console;
 
@@ -12,6 +14,7 @@ public class CombatFloor extends Floor{
 
     @Override
     public void trigger(Player p) {
-        Console.printBlue("Encuentras un enemigo");
+        Entity enemy = EntityController.getRandEnemy(super.floorNumber);
+        Console.print("Encuentras un enemigo", Console.DEFAULT_COLOR);
     }
 }

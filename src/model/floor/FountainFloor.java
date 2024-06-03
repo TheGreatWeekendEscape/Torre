@@ -12,6 +12,6 @@ public class FountainFloor extends Floor {
 
     @Override
     public void trigger(Player p) {
-        Console.printBlue("Has encontrado una fuente");
+        Console.print("Has encontrado una fuente", Console.DEFAULT_COLOR);
     }
 }
