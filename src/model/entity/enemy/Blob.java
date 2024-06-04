@@ -1,5 +1,7 @@
 package model.entity.enemy;
 
+import model.spell.AtaqueBasico;
+import model.spell.DefensaBasica;
 import model.spell.Spell;
 
 import java.util.ArrayList;
@@ -8,33 +10,29 @@ public class Blob extends Enemy {
 
     @Override
     void init() {
-        super.nombre = "";
+        super.displayName = "un blob";
+        super.name = "Blob";
         super.dificulty = 1;
-        super.maxHp = generateHp(15);
+        super.maxHp = generateHp(14);
         super.hp = maxHp;
-        super.gold = generateGold();
-        super.representation = generateRepresentation();
-        super.spells = generateSpells();
+        generateRepresentation();
+        generateSpells();
     }
 
     @Override
-    ArrayList<Spell> generateSpells() {
-        return null;
+    void generateSpells() {
+        super.spells = new ArrayList<>();
+        super.spells.add(new AtaqueBasico(this));
+        super.spells.add(new DefensaBasica(this));
     }
 
     @Override
-    String [] generateRepresentation () {
-        String [] representation = new String[5];
-        String s0 = "/     \\";
-        String s1 = "| () () |";
-        String s2 = "\\  ^  /";
-        String s3 = "\\\\\\\\\\";
-        String s4 = "\\\\\\\\\\";
-        representation[0] = s0;
-        representation[1] = s1;
-        representation[2] = s2;
-        representation[3] = s3;
-        representation[4] = s4;
-        return representation;
+    void generateRepresentation () {
+        super.representation = new String[5];
+        super.representation[0] = "/     \\";
+        super.representation[1] = "|() ()|";
+        super.representation[2] = "\\  ^  /";
+        super.representation[3] = "  \\\\\\\\\\";
+        super.representation[4] = "  \\\\\\\\\\";
     }
 }

@@ -1,5 +1,7 @@
 package util;
 
+import model.entity.Entity;
+
 import java.util.Scanner;
 
 public class Console {
@@ -54,13 +56,13 @@ public class Console {
     public static final String FLOOR_COLOR = BLACK;
     public static final String FLOOR_BACKGROUND = BLUE_BG;
 
-    public static void print (String message, String color) {
-        System.out.print(color + message + " ..." + RESET );
+    public static void print(String message, String color) {
+        System.out.print(color + message + " ..." + RESET);
         sc.nextLine();
     }
 
-    public static void printBold (String message, String color) {
-        System.out.print(BRIGHT + color + message + " ..." + RESET );
+    public static void printBold(String message, String color) {
+        System.out.print(BRIGHT + color + message + " ..." + RESET);
         sc.nextLine();
     }
 
@@ -69,7 +71,29 @@ public class Console {
         sc.nextLine();
     }
 
+    public static void printFightStage(Entity player, Entity enemy) {
+        System.out.println();
+        System.out.println(BLACK + PURPLE_BG + player.getName() + RESET + "             " + BLACK + PURPLE_BG + enemy.getName() + RESET);
+        System.out.println();
+        System.out.println(PURPLE + "                  " + enemy.getRepresentation()[0]);
+        System.out.println(PURPLE + "  O               " + enemy.getRepresentation()[1]);
+        System.out.println(PURPLE + "  |   *           " + enemy.getRepresentation()[2]);
+        System.out.println(PURPLE + " /|\\/            " + enemy.getRepresentation()[3]);
+        System.out.println(PURPLE + " / \\             " + enemy.getRepresentation()[4]);
+    }
 
+    public static void printEnemy(Entity enemy) {
+        System.out.println();
+        System.out.println(BLACK + PURPLE_BG + enemy.getName() + RESET);
+        printRepresentation(enemy.getRepresentation());
+        System.out.println(RED + BLACK_BG + "**********" + RESET);
+    }
+
+    private static void printRepresentation(String[] representation) {
+        for (String s : representation) {
+            System.out.println(PURPLE + s);
+        }
+    }
 
 
 

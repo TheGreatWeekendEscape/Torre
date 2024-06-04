@@ -3,6 +3,7 @@ package model.floor;
 import controller.EntityController;
 import model.entity.Entity;
 import model.entity.Player;
+import model.entity.enemy.Enemy;
 import util.Console;
 
 public class CombatFloor extends Floor{
@@ -13,12 +14,15 @@ public class CombatFloor extends Floor{
     }
 
     @Override
-    public boolean trigger(Player p) {
-        Entity enemy = EntityController.getRandEnemy(super.floorNumber);
-        /**
-         * p.fight(enemy);
-         */
-        Console.print("Encuentras un enemigo", Console.DEFAULT_COLOR);
-        return false;
+    public boolean trigger(Player player) {
+        Enemy enemy = (Enemy)  EntityController.getRandEnemy(super.floorNumber);
+        Console.print("Te encuentras con " + enemy.getDisplayName(), Console.DEFAULT_COLOR);
+        if  (player.fight(enemy)) {
+            Console.print("Has muerto", Console.BAD_COLOR);
+            return false;
+        } else {
+            Console.print("Has vencido a " + enemy.getDisplayName(), Console.GOOD_COLOR);
+            return true;
+        }
     }
 }

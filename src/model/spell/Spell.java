@@ -18,8 +18,16 @@ public abstract class Spell {
         init();
     }
 
+    void setTarget(Entity target) {
+        this.target = target;
+    }
 
+    public String getName() {
+        return this.name;
+    }
+    public String getDesc() { return this.desc; }
 
     abstract void init();
     abstract void cast();
+
 }

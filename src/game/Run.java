@@ -27,7 +27,7 @@ public class Run {
             floorNum++;
             Console.printBackground("PISO " + floorNum + ":", Console.FLOOR_COLOR, Console.FLOOR_BACKGROUND);
             Floor floor = FloorController.getRandFloor(floorNum);
-            floor.trigger(player);
+            fin = floor.trigger(player);
         }
     }
 }

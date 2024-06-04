@@ -1,18 +1,20 @@
 package model.entity.enemy;
 
 import model.entity.Entity;
-import model.spell.Spell;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public abstract class Enemy extends Entity {
 
+    protected String displayName;
     protected int dificulty;
     Random rand = new Random();
 
     public Enemy () {
         init();
+        super.gold = generateGold();
+        super.armor = 0;
     }
 
     int generateGold() {
@@ -23,8 +25,11 @@ public abstract class Enemy extends Entity {
         return rand.nextInt(baseHp - 3, baseHp + 3); //Comprobar que funciona
     }
 
+    public String getDisplayName() {
+        return this.displayName;
+    }
 
-    abstract ArrayList<Spell> generateSpells();
-    abstract String [] generateRepresentation();
+    abstract void generateSpells();
+    abstract void generateRepresentation();
     abstract void init();
 }

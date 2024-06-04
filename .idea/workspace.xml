@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="" />
+    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/spell/DefensaBasica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Fight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Blob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Blob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/AtaqueBasico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/AtaqueBasico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Console.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,9 +41,9 @@
     <setting file="file://$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/model/floor/CombatFloor.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2hMspDaKZNc1V0zm7LEWbznbifP" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -37,14 +52,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />

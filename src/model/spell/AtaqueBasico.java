@@ -10,23 +10,13 @@ public class AtaqueBasico extends Spell {
 
     @Override
     void init() {
-        this.name = "Ataque basico";
-        this.desc = "Causa 6 de daño";
-        this.damage = 3;
-        this.defense = 0;
-        this.hits = 1;
-        this.type = Type.NOTYPE;
-
+        super.name = "Ataque basico";
+        super.desc = "Causa 3 de daño";
+        super.damage = 3;
+        super.defense = 0;
+        super.hits = 1;
+        super.type = Type.NOTYPE;
     }
-
-    protected String name;
-    protected String desc;
-    protected int damage;
-    protected int defense;
-    protected int hits;
-    protected Type type;
-    protected Entity target;
-    protected Entity caster;
 
     @Override
     void cast() {
