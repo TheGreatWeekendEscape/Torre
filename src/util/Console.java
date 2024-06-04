@@ -2,11 +2,13 @@ package util;
 
 import model.entity.Entity;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Console {
 
     private static Scanner sc = new Scanner(System.in);
+    private static  final int NAME_BOX_SIZE = 17;
 
     //Reset
     private static final String RESET = "\u001B[0m";
@@ -55,6 +57,12 @@ public class Console {
     public static final String GOOD_COLOR = GREEN;
     public static final String FLOOR_COLOR = BLACK;
     public static final String FLOOR_BACKGROUND = BLUE_BG;
+    public static final String SPELL_COLOR = BRIGHT_CYAN;
+
+    public static void print(String message) {
+        System.out.print(message + " ..." + RESET);
+        sc.nextLine();
+    }
 
     public static void print(String message, String color) {
         System.out.print(color + message + " ..." + RESET);
@@ -71,15 +79,54 @@ public class Console {
         sc.nextLine();
     }
 
+    public static String printMenu(ArrayList<String> menu) {
+        System.out.print(DEFAULT_COLOR);
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < menu.size(); i++) {
+            System.out.println(menu.get(i));
+        }
+        String option = "";
+        boolean validOption = false;
+        while (!validOption) {
+            option = sc.nextLine();
+            for (int i = 1; i <= menu.size(); i++) {
+                if ((i + "").equalsIgnoreCase(option)) {
+                    validOption = true;
+                }
+            }
+            if (!validOption) {
+                System.out.println(DEFAULT_COLOR + "Elige una opcion valida [1-" + menu.size() + "]: ");
+            }
+        }
+        System.out.print(RESET);
+        return option;
+    }
+
     public static void printFightStage(Entity player, Entity enemy) {
+        String playerHpDisplay = player.getHp() + "/" + player.getMaxHp();
+        String enemyHpDisplay = enemy.getHp() + "/" + enemy.getMaxHp();
+        String playerHpBar = "";
+        String enemyHpBar = "";
+        for (int i = 0; i < player.getHpPercentage(); i++) {
+            playerHpBar += "█";
+        }
+        for (int i = 0; i < enemy.getHpPercentage(); i++) {
+            enemyHpBar += "█";
+        }
+
         System.out.println();
-        System.out.println(BLACK + PURPLE_BG + player.getName() + RESET + "             " + BLACK + PURPLE_BG + enemy.getName() + RESET);
+        System.out.println(BLACK + PURPLE_BG +  centerString(player.getName(), NAME_BOX_SIZE) + RESET + "      " +
+                BLACK + PURPLE_BG +  centerString(enemy.getName(), NAME_BOX_SIZE) + RESET);
+        System.out.print(PURPLE);
+        System.out.println("                            " + enemy.getRepresentation()[0]);
+        System.out.println("       O                    " + enemy.getRepresentation()[1]);
+        System.out.println("       |   *                " + enemy.getRepresentation()[2]);
+        System.out.println("      /|\\/                 " + enemy.getRepresentation()[3]);
+        System.out.println("      / \\                  " + enemy.getRepresentation()[4] + RESET);
+        System.out.printf("   " + BLACK_BG + GREEN + "%-10s" + RESET + "              " + BLACK_BG + GREEN + "%-10s" + RESET, playerHpBar,enemyHpBar);
         System.out.println();
-        System.out.println(PURPLE + "                  " + enemy.getRepresentation()[0]);
-        System.out.println(PURPLE + "  O               " + enemy.getRepresentation()[1]);
-        System.out.println(PURPLE + "  |   *           " + enemy.getRepresentation()[2]);
-        System.out.println(PURPLE + " /|\\/            " + enemy.getRepresentation()[3]);
-        System.out.println(PURPLE + " / \\             " + enemy.getRepresentation()[4]);
+        System.out.println(PURPLE + centerString(playerHpDisplay, NAME_BOX_SIZE) + RESET + "      " + PURPLE + centerString(enemyHpDisplay, NAME_BOX_SIZE) + RESET);
+        System.out.println();
     }
 
     public static void printEnemy(Entity enemy) {
@@ -89,13 +136,30 @@ public class Console {
         System.out.println(RED + BLACK_BG + "**********" + RESET);
     }
 
+    //A partir de aqui son toodo metodos privados
+
     private static void printRepresentation(String[] representation) {
         for (String s : representation) {
             System.out.println(PURPLE + s);
         }
     }
 
+    private static String centerString(String str, int size) {
+        if (str.length() >= size) {
+            return str.substring(0, size);
+        }
+        int total = size - str.length();
+        int left = total / 2;
+        int right = total - left;
 
-
-
+        StringBuilder finalStr = new StringBuilder();
+        for (int i = 0; i < left; i++) {
+            finalStr.append(' ');
+        }
+        finalStr.append(str);
+        for (int i = 0; i < right; i++) {
+            finalStr.append(' ');
+        }
+        return finalStr.toString();
+    }
 }

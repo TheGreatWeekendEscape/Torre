@@ -28,7 +28,6 @@ public abstract class Enemy extends Entity {
     public String getDisplayName() {
         return this.displayName;
     }
-
     abstract void generateSpells();
     abstract void generateRepresentation();
     abstract void init();
