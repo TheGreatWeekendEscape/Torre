@@ -19,10 +19,10 @@ public class CombatFloor extends Floor{
         Console.print("Te encuentras con " + enemy.getDisplayName(), Console.DEFAULT_COLOR);
         if  (player.fight(enemy)) {
             Console.print("Has muerto", Console.BAD_COLOR);
-            return false;
+            return true;
         } else {
             Console.print("Has vencido a " + enemy.getDisplayName(), Console.GOOD_COLOR);
-            return true;
+            return false;
         }
     }
 }

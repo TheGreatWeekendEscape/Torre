@@ -1,6 +1,7 @@
 package model.spell;
 
 import model.entity.Entity;
+import util.Console;
 
 public class DefensaBasica extends Spell{
 
@@ -11,7 +12,7 @@ public class DefensaBasica extends Spell{
     @Override
     void init() {
         super.name = "Defensa basica";
-        super.desc = "Gana 3 de armadura";
+        super.desc = "Gana 3 de defensa";
         super.damage = 0;
         super.defense = 3;
         super.hits = 0;
@@ -20,7 +21,15 @@ public class DefensaBasica extends Spell{
     }
 
     @Override
-    void cast() {
-        super.caster.gainArmor(this.defense);
+    public void cast(Entity target) {
+        caster.gainArmor(this.defense);
+        Console.printArmor(super.caster.getName() + " gana ", super.defense + "");
     }
+
+    @Override
+    public String getSummary() {
+        return Console.ARMOR_COLOR + "[" + this.defense + Console.DEF_CHAR + "]" + Console.RESET;
+    }
+
+
 }

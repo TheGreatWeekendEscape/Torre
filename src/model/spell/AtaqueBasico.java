@@ -1,6 +1,7 @@
 package model.spell;
 
 import model.entity.Entity;
+import util.Console;
 
 public class AtaqueBasico extends Spell {
 
@@ -19,7 +20,13 @@ public class AtaqueBasico extends Spell {
     }
 
     @Override
-    void cast() {
-        super.target.loseHp(super.damage);
+    public void cast(Entity target) {
+        int damage = target.getHit(getTotalDamage());
+        Console.printDamage(super.caster.getName() + " inflige a " + target.getName() + " ", damage);
+    }
+
+    @Override
+    public String getSummary() {
+        return Console.DAMAGE_COLOR + "[" + super.damage + Console.DMG_CHAR + "]" + Console.RESET;
     }
 }

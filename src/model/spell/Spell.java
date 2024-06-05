@@ -10,7 +10,6 @@ public abstract class Spell {
     protected int defense;
     protected int hits;
     protected Type type;
-    protected Entity target;
     protected Entity caster;
 
     public Spell(Entity caster) {
@@ -18,16 +17,16 @@ public abstract class Spell {
         init();
     }
 
-    void setTarget(Entity target) {
-        this.target = target;
-    }
-
     public String getName() {
         return this.name;
     }
     public String getDesc() { return this.desc; }
+    public int getTotalDamage() {
+        return this.damage * this.hits;
+    }
 
     abstract void init();
-    abstract void cast();
+    public abstract void cast(Entity target);
+    public abstract String getSummary();
 
 }

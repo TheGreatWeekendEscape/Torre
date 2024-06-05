@@ -22,8 +22,26 @@ public abstract class Entity {
         }
     }
 
+    //Este metodo resta vida plana, sin armadura
     public void loseHp(int amount) {
         this.hp -= amount;
+        if (this.hp < 0) {
+            this.hp = 0;
+        }
+    }
+
+    //Este metodo es un golpe de hechizo con posible armadura y devuelve el daño final
+    public int getHit (int amount) {
+        int finalArmor = armor - amount;
+        int finalDamage = finalArmor * -1;
+        if (finalArmor >= 0) {
+            loseArmor(amount);
+            return 0;
+        } else {
+            armor = 0;
+            loseHp(finalDamage);
+            return finalDamage;
+        }
     }
 
     public void gainArmor(int amount) {
@@ -35,6 +53,10 @@ public abstract class Entity {
         if (this.armor < 0) {
             this.armor = 0;
         }
+    }
+
+    public void resetArmor() {
+        this.armor = 0;
     }
 
     public int getHpPercentage() {

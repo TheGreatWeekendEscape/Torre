@@ -8,7 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/AtaqueBasico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/AtaqueBasico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/DefensaBasica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/DefensaBasica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/Spell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +32,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/out/production/Torre/game/Run.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/entity/Entity.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/model/floor/CombatFloor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/util/Console.java" root0="SKIP_INSPECTION" />

@@ -14,31 +14,33 @@ public class Player extends Entity{
         init();
     }
 
-    protected String name;
-    protected int hp;
-    protected int maxHp;
-    protected int armor;
-    protected ArrayList<Spell> spells;
-    protected int gold;
-
     private void init() {
         super.maxHp = 25;
         super.hp = super.maxHp;
         super.armor = 0;
+        super.gold = 0;
         generatePlayerSpells();
     }
 
     public boolean fight(Entity enemy) {
+        int turn = 0;
         boolean fin = false;
         while (!fin) {
+            turn ++;
             Console.printFightStage(this, enemy);
             Spell enemySpell = enemy.getRandSpell();
-            Console.print(Console.DEFAULT_COLOR + enemy.getName() + " va a usar " + Console.SPELL_COLOR + enemySpell.getName() + Console.DEFAULT_COLOR);
+            System.out.println(Console.DEFAULT_COLOR + enemy.getName() + " va a usar " + Console.SPELL_COLOR + enemySpell.getName() + Console.RESET);
             String option = Console.printMenu(getCombatMenu(enemySpell.getName()));
 
             switch (option) {
                 case "1": //Spells
-                    String spellsOption = Console.printMenu(getSpellsMenu());
+                    int spellsOption = Integer.parseInt(Console.printMenu(getSpellsMenu()));
+                    if (spellsOption <= super.spells.size()) { //Si no ha elegido volver
+                        Spell playerSpell = super.spells.get(spellsOption - 1);
+                        Console.printSpell("Usas ", playerSpell.getName());
+                        playerSpell.cast(enemy);
+                        enemySpell.cast(this);
+                    }
                     break;
                 case "2": //Potions
                     break;
@@ -48,6 +50,13 @@ public class Player extends Entity{
                     break;
                 default:
                     System.out.println("Si estas leyendo esto es que hay un error en el codigo");
+            }
+
+            if (super.hp <= 0) {
+                return true;
+            }
+            if (enemy.getHp() <= 0) {
+                return false;
             }
         }
         return false;
@@ -75,10 +84,11 @@ public class Player extends Entity{
     }
 
     private ArrayList<String> getSpellsMenu() {
-        ArrayList<String> spellsMenu = new ArrayList<>(); //Spells es null corregir mañana
+        ArrayList<String> spellsMenu = new ArrayList<>();
         for (int i = 0; i < spells.size(); i++) {
-            spellsMenu.add((i + 1) + ".- " + spells.get(i).getName());
+            spellsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + Console.SPELL_COLOR + spells.get(i).getName() + Console.RESET +  spells.get(i).getSummary());
         }
+        spellsMenu.add(Console.DEFAULT_COLOR + spells.size() + 1 + ".- Volver" + Console.RESET);
         return spellsMenu;
     }
 }

@@ -8,10 +8,12 @@ import java.util.Scanner;
 public class Console {
 
     private static Scanner sc = new Scanner(System.in);
-    private static  final int NAME_BOX_SIZE = 17;
+    private static final int NAME_BOX_SIZE = 17;
+    public static final String DEF_CHAR = "#";
+    public static final String DMG_CHAR = "‡";
 
     //Reset
-    private static final String RESET = "\u001B[0m";
+    public static final String RESET = "\u001B[0m";
 
     private static final String BLACK = "\u001B[30m";
     private static final String RED = "\u001B[31m";
@@ -57,7 +59,10 @@ public class Console {
     public static final String GOOD_COLOR = GREEN;
     public static final String FLOOR_COLOR = BLACK;
     public static final String FLOOR_BACKGROUND = BLUE_BG;
-    public static final String SPELL_COLOR = BRIGHT_CYAN;
+    public static final String SPELL_COLOR = BRIGHT_PURPLE;
+    public static final String RELIC_COLOR = BRIGHT_YELLOW;
+    public static final String ARMOR_COLOR = BRIGHT_CYAN;
+    public static final String DAMAGE_COLOR = BRIGHT_RED;
 
     public static void print(String message) {
         System.out.print(message + " ..." + RESET);
@@ -76,6 +81,36 @@ public class Console {
 
     public static void printBackground(String message, String color, String backgroundColor) {
         System.out.print(backgroundColor + color + message + RESET + " ...");
+        sc.nextLine();
+    }
+
+    public static void printSpell(String text, String spellName) {
+        System.out.println(DEFAULT_COLOR + text + SPELL_COLOR + spellName + RESET + DEFAULT_COLOR + " ..." + RESET);
+        sc.nextLine();
+    }
+
+    public static void printRelic(String text, String relicName) {
+        System.out.println(DEFAULT_COLOR + text + RELIC_COLOR + relicName + RESET + DEFAULT_COLOR + " ..." + RESET);
+        sc.nextLine();
+    }
+
+    public static void printArmor(String text, String armor) {
+        System.out.println(DEFAULT_COLOR + text + ARMOR_COLOR + armor + DEF_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
+        sc.nextLine();
+    }
+
+    public static void printDamage(String text, int damage) {
+        System.out.println(DEFAULT_COLOR + text + DAMAGE_COLOR + damage + DMG_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
+        sc.nextLine();
+    }
+
+    public static void printGood(String text, String good) {
+        System.out.println(DEFAULT_COLOR + text + GOOD_COLOR + good + RESET + DEFAULT_COLOR + " ..." + RESET);
+        sc.nextLine();
+    }
+
+    public static void printBad(String text, String bad) {
+        System.out.println(DEFAULT_COLOR + text + BAD_COLOR + bad + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
@@ -113,17 +148,20 @@ public class Console {
         for (int i = 0; i < enemy.getHpPercentage(); i++) {
             enemyHpBar += "█";
         }
+        String playerArmorDisplay = player.getArmor() <= 0 ? "" : "[" + player.getArmor() + " " + DEF_CHAR + "]";
+        String enemyArmorDisplay = enemy.getArmor() <= 0 ? "" : "[" + enemy.getArmor() + " " + DEF_CHAR + "]";
 
         System.out.println();
-        System.out.println(BLACK + PURPLE_BG +  centerString(player.getName(), NAME_BOX_SIZE) + RESET + "      " +
-                BLACK + PURPLE_BG +  centerString(enemy.getName(), NAME_BOX_SIZE) + RESET);
+        System.out.println(ARMOR_COLOR + centerString(playerArmorDisplay, NAME_BOX_SIZE) + "      " + centerString(enemyArmorDisplay, NAME_BOX_SIZE) + RESET);
+        System.out.println(BLACK + PURPLE_BG + centerString(player.getName(), NAME_BOX_SIZE) + RESET + "      " +
+                BLACK + PURPLE_BG + centerString(enemy.getName(), NAME_BOX_SIZE) + RESET);
         System.out.print(PURPLE);
         System.out.println("                            " + enemy.getRepresentation()[0]);
         System.out.println("       O                    " + enemy.getRepresentation()[1]);
         System.out.println("       |   *                " + enemy.getRepresentation()[2]);
         System.out.println("      /|\\/                 " + enemy.getRepresentation()[3]);
         System.out.println("      / \\                  " + enemy.getRepresentation()[4] + RESET);
-        System.out.printf("   " + BLACK_BG + GREEN + "%-10s" + RESET + "              " + BLACK_BG + GREEN + "%-10s" + RESET, playerHpBar,enemyHpBar);
+        System.out.printf("   " + BLACK_BG + GREEN + "%-10s" + RESET + "              " + BLACK_BG + GREEN + "%-10s" + RESET, playerHpBar, enemyHpBar);
         System.out.println();
         System.out.println(PURPLE + centerString(playerHpDisplay, NAME_BOX_SIZE) + RESET + "      " + PURPLE + centerString(enemyHpDisplay, NAME_BOX_SIZE) + RESET);
         System.out.println();
