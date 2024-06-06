@@ -33,6 +33,54 @@ public abstract class Spell implements Cloneable{
         return this.desc;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public int getHits() {
+        return hits;
+    }
+
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public Entity getCaster() {
+        return caster;
+    }
+
+    public void setCaster(Entity caster) {
+        this.caster = caster;
+    }
+
     public int getTotalDamage() {
         return this.damage * this.hits;
     }
@@ -44,6 +92,8 @@ public abstract class Spell implements Cloneable{
             throw new AssertionError();
         }
     }
+
+
 
     abstract void init();
 

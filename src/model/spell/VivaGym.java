@@ -10,7 +10,7 @@ public class VivaGym  extends Spell {
 
     @Override
     void init() {
-        super.name = "VivaGym";
+        super.name = Console.SPELL_COLOR + "VivaGym" + Console.RESET;
         super.desc = "Durante el resto del combate todos tus hechizos ganan 1 de danio";
         super.damage = 0;
         super.defense = 0;

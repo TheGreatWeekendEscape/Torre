@@ -11,7 +11,7 @@ public class AtaqueBasico extends Spell {
 
     @Override
     void init() {
-        super.name = "Ataque basico";
+        super.name = Console.SPELL_COLOR + "Ataque basico" + Console.RESET;
         super.desc = "Causa 3 de daño";
         super.damage = 3;
         super.defense = 0;

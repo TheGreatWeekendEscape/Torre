@@ -8,5 +8,17 @@ public abstract class Potion {
     protected String desc;
     protected int quality;
 
-    public abstract void drink(Entity target);
+    public abstract void drink(Entity caster, Entity target);
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
 }

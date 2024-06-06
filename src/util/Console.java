@@ -11,7 +11,7 @@ public class Console {
     private static final int NAME_BOX_SIZE = 17;
     public static final String DEF_CHAR = "#";
     public static final String DMG_CHAR = "‡";
-    public static final String STS_CHAR = "S";
+    public static final String STS_CHAR = "*";
 
     //Reset
     public static final String RESET = "\u001B[0m";
@@ -65,9 +65,10 @@ public class Console {
     public static final String ARMOR_COLOR = BRIGHT_CYAN;
     public static final String DAMAGE_COLOR = BRIGHT_RED;
     public static final String STATUS_COLOR = BRIGHT_GREEN;
+    public static final String POTION_COLOR = BRIGHT_RED;
 
-    public static void print(String message) {
-        System.out.print(message + " ..." + RESET);
+    public static void printDefault(String message) {
+        System.out.print(Console.DEFAULT_COLOR + message + " ..." + RESET);
         sc.nextLine();
     }
 
@@ -88,6 +89,11 @@ public class Console {
 
     public static void printSpell(String text, String spellName) {
         System.out.println(DEFAULT_COLOR + text + SPELL_COLOR + spellName + RESET + DEFAULT_COLOR + " ..." + RESET);
+        sc.nextLine();
+    }
+
+    public static void printPotion (String text, String potionName) {
+        System.out.println(DEFAULT_COLOR + text + POTION_COLOR + potionName + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 

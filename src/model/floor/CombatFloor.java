@@ -1,7 +1,6 @@
 package model.floor;
 
 import controller.EntityController;
-import model.entity.Entity;
 import model.entity.Player;
 import model.entity.enemy.Enemy;
 import util.Console;

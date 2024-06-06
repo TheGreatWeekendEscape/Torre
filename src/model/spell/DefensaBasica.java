@@ -11,7 +11,7 @@ public class DefensaBasica extends Spell{
 
     @Override
     void init() {
-        super.name = "Defensa basica";
+        super.name = Console.SPELL_COLOR + "Defensa basica" + Console.RESET;
         super.desc = "Gana 3 de defensa";
         super.damage = 0;
         super.defense = 3;

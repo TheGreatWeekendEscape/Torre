@@ -10,7 +10,7 @@ public class LLuviaDePiedras extends Spell{
 
     @Override
     void init() {
-        super.name = "LLuvia de piedras";
+        super.name = Console.SPELL_COLOR + "Lluvia de piedras" + Console.RESET;
         super.desc = "Causa 1x6 de daño";
         super.damage = 1;
         super.defense = 0;

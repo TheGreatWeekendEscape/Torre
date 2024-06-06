@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/potion/PocionDeFuego.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/potion/PocionDeRoca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/potion/Potion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/spell/LLuviaDePiedras.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/spell/VivaGym.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Run.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/CombatFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/potion/PocionDeFuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/potion/PocionDeFuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/potion/PocionDeRoca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/potion/PocionDeRoca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/potion/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/potion/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/AtaqueBasico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/AtaqueBasico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/DefensaBasica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/DefensaBasica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/LLuviaDePiedras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/LLuviaDePiedras.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/spell/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/spell/VivaGym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/VivaGym.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
