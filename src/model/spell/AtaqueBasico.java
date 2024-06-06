@@ -12,7 +12,6 @@ public class AtaqueBasico extends Spell {
     @Override
     void init() {
         super.name = Console.SPELL_COLOR + "Ataque basico" + Console.RESET;
-        super.desc = "Causa 3 de daño";
         super.damage = 3;
         super.defense = 0;
         super.hits = 1;
@@ -28,5 +27,10 @@ public class AtaqueBasico extends Spell {
     @Override
     public String getSummary() {
         return Console.DAMAGE_COLOR + "[" + super.damage + Console.DMG_CHAR + "]" + Console.RESET;
+    }
+
+    @Override
+    public String getDesc() {
+        return "Inflige " + super.damage + " de daño";
     }
 }

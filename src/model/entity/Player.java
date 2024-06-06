@@ -50,9 +50,10 @@ public class Player extends Entity {
                     int spellOption = Integer.parseInt(Console.printMenu(getSpellsMenu()));
                     if (spellOption <= super.spells.size()) { //Si no ha elegido volver
                         Spell playerSpell = super.spells.get(spellOption - 1);
-                        Console.printSpell("Usas ", playerSpell.getName());
+                        Console.printDefault("Usas " +  playerSpell.getName());
                         playerSpell.cast(enemy);
                         if (enemy.getHp() > 0) {
+                            Console.printDefault(enemy.getName() + " usa " + enemySpell.getName());
                             enemySpell.cast(this);
                         }
                         nextTurn = true;
@@ -76,10 +77,11 @@ public class Player extends Entity {
                     }
                     nextTurn = false;
                     break;
-                case "3": //Relics
+                case "3": //Objects
                     nextTurn = false;
                     break;
                 case "4": //Info
+                    Console.printGrimoire(this, enemySpell);
                     nextTurn = false;
                     break;
                 default:
@@ -117,7 +119,7 @@ public class Player extends Entity {
         String s1 = "1.- Hechizos";
         String s2 = "2.- Bolsa de pociones";
         String s3 = "3.- Objetos";
-        String s4 = "4.- Info";
+        String s4 = "4.- Grimorio";
         combatMenu.add(s1);
         combatMenu.add(s2);
         combatMenu.add(s3);

@@ -12,12 +12,10 @@ public class DefensaBasica extends Spell{
     @Override
     void init() {
         super.name = Console.SPELL_COLOR + "Defensa basica" + Console.RESET;
-        super.desc = "Gana 3 de defensa";
         super.damage = 0;
         super.defense = 3;
         super.hits = 0;
         super.type = Type.NOTYPE;
-
     }
 
     @Override
@@ -29,6 +27,11 @@ public class DefensaBasica extends Spell{
     @Override
     public String getSummary() {
         return Console.ARMOR_COLOR + "[" + this.defense + Console.DEF_CHAR + "]" + Console.RESET;
+    }
+
+    @Override
+    public String getDesc() {
+        return "Gana " + super.defense + " de defensa";
     }
 
 

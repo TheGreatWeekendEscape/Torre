@@ -11,7 +11,7 @@ public class LLuviaDePiedras extends Spell{
     @Override
     void init() {
         super.name = Console.SPELL_COLOR + "Lluvia de piedras" + Console.RESET;
-        super.desc = "Causa 1x6 de daño";
+
         super.damage = 1;
         super.defense = 0;
         super.hits = 6;
@@ -27,5 +27,10 @@ public class LLuviaDePiedras extends Spell{
     @Override
     public String getSummary() {
         return Console.DAMAGE_COLOR + "[" + super.damage + "x" + super.hits + Console.DMG_CHAR + "]" + Console.RESET;
+    }
+
+    @Override
+    public String getDesc() {
+        return "Inflige " + super.damage + "x" + super.hits + " de danio";
     }
 }

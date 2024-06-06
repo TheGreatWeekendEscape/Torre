@@ -1,6 +1,7 @@
 package util;
 
 import model.entity.Entity;
+import model.spell.Spell;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -68,7 +69,7 @@ public class Console {
     public static final String POTION_COLOR = BRIGHT_RED;
 
     public static void printDefault(String message) {
-        System.out.print(Console.DEFAULT_COLOR + message + " ..." + RESET);
+        System.out.print(Console.DEFAULT_COLOR + message + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
@@ -88,37 +89,37 @@ public class Console {
     }
 
     public static void printSpell(String text, String spellName) {
-        System.out.println(DEFAULT_COLOR + text + SPELL_COLOR + spellName + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + SPELL_COLOR + spellName + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
     public static void printPotion (String text, String potionName) {
-        System.out.println(DEFAULT_COLOR + text + POTION_COLOR + potionName + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + POTION_COLOR + potionName + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
     public static void printRelic(String text, String relicName) {
-        System.out.println(DEFAULT_COLOR + text + RELIC_COLOR + relicName + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + RELIC_COLOR + relicName + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
     public static void printArmor(String text, String armor) {
-        System.out.println(DEFAULT_COLOR + text + ARMOR_COLOR + armor + DEF_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + ARMOR_COLOR + armor + DEF_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
     public static void printDamage(String text, int damage) {
-        System.out.println(DEFAULT_COLOR + text + DAMAGE_COLOR + damage + DMG_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + DAMAGE_COLOR + damage + DMG_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
     public static void printGood(String text, String good) {
-        System.out.println(DEFAULT_COLOR + text + GOOD_COLOR + good + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + GOOD_COLOR + good + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
     public static void printBad(String text, String bad) {
-        System.out.println(DEFAULT_COLOR + text + BAD_COLOR + bad + RESET + DEFAULT_COLOR + " ..." + RESET);
+        System.out.print(DEFAULT_COLOR + text + BAD_COLOR + bad + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
     }
 
@@ -143,6 +144,17 @@ public class Console {
         }
         System.out.print(RESET);
         return option;
+    }
+
+    public static void printGrimoire(Entity player, Spell enemySpell) {
+        System.out.println(UNDERLINE  + DEFAULT_COLOR + "Hechizo del enemigo: " + RESET);
+        System.out.println(DEFAULT_COLOR + "-" + enemySpell.getName() + DEFAULT_COLOR + ": " + enemySpell.getDesc());
+        System.out.println(UNDERLINE + DEFAULT_COLOR + "Tus hechizos: " + RESET);
+        for (Spell s : player.getSpells()) {
+            System.out.println("-" + s.getName() + DEFAULT_COLOR + ": " + s.getDesc());
+        }
+        System.out.print("...");
+        sc.nextLine();
     }
 
     public static void printFightStage(Entity player, Entity enemy) {

@@ -5,7 +5,6 @@ import model.entity.Entity;
 public abstract class Spell implements Cloneable{
 
     protected String name;
-    protected String desc;
     protected int damage;
     protected int defense;
     protected int hits;
@@ -29,16 +28,8 @@ public abstract class Spell implements Cloneable{
         return this.name;
     }
 
-    public String getDesc() {
-        return this.desc;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
     }
 
     public int getDamage() {
@@ -100,5 +91,7 @@ public abstract class Spell implements Cloneable{
     public abstract void cast(Entity target);
 
     public abstract String getSummary();
+
+    public abstract String getDesc();
 
 }
