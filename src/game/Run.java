@@ -5,6 +5,9 @@ import model.floor.Floor;
 import model.entity.Player;
 import util.Console;
 
+import java.sql.Array;
+import java.util.ArrayList;
+
 public class Run {
 
     private Player player;
@@ -14,7 +17,6 @@ public class Run {
     public Run (Player p) {
         this.player = p;
         configure();
-        play();
     }
 
     private void configure() {
@@ -22,12 +24,28 @@ public class Run {
         this.fin = false;
     }
 
-    private void play() {
+    public boolean play() {
         while (!fin) {
             floorNum++;
             Console.printBackground("PISO " + floorNum + ":", Console.FLOOR_COLOR, Console.FLOOR_BACKGROUND);
             Floor floor = FloorController.getRandFloor(floorNum);
             fin = floor.trigger(player);
         }
+
+        String option = Console.printMenu(getPlayagainMenu());
+        if (option.equals("1")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private ArrayList<String> getPlayagainMenu() {
+        ArrayList<String> playagainMenu = new ArrayList<>();
+        String s1 = Console.DEFAULT_COLOR + "1.- Si";
+        String s2 = Console.DEFAULT_COLOR + "2.- No";
+        playagainMenu.add(s1);
+        playagainMenu.add(s2);
+        return playagainMenu;
     }
 }

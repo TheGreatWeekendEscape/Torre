@@ -1,8 +1,6 @@
 package model.entity;
 
-import model.spell.AtaqueBasico;
-import model.spell.DefensaBasica;
-import model.spell.Spell;
+import model.spell.*;
 import util.Console;
 
 import java.util.ArrayList;
@@ -22,14 +20,20 @@ public class Player extends Entity{
         generatePlayerSpells();
     }
 
+
     public boolean fight(Entity enemy) {
-        int turn = 0;
-        boolean fin = false;
-        while (!fin) {
-            turn ++;
+        ArrayList<Spell> unmodifiedSpells = new ArrayList<>();
+        boolean nextTurn = true;
+        Spell enemySpell = null;
+        for (Spell s : super.spells) {
+            unmodifiedSpells.add(s.clone());
+        }
+        while (true) {
+            if (nextTurn) {
+                enemySpell = enemy.getRandSpell();
+            }
             Console.printFightStage(this, enemy);
-            Spell enemySpell = enemy.getRandSpell();
-            System.out.println(Console.DEFAULT_COLOR + enemy.getName() + " va a usar " + Console.SPELL_COLOR + enemySpell.getName() + Console.RESET);
+            System.out.println(Console.DEFAULT_COLOR + enemy.getName() + " va a usar " + Console.SPELL_COLOR + enemySpell.getName() + enemySpell.getSummary() + Console.RESET);
             String option = Console.printMenu(getCombatMenu(enemySpell.getName()));
 
             switch (option) {
@@ -39,14 +43,20 @@ public class Player extends Entity{
                         Spell playerSpell = super.spells.get(spellsOption - 1);
                         Console.printSpell("Usas ", playerSpell.getName());
                         playerSpell.cast(enemy);
-                        enemySpell.cast(this);
+                        if (enemy.getHp() > 0) {
+                            enemySpell.cast(this);
+                        }
                     }
+                    nextTurn = true;
                     break;
                 case "2": //Potions
+                    nextTurn = false;
                     break;
                 case "3": //Relics
+                    nextTurn = false;
                     break;
                 case "4": //Info
+                    nextTurn = false;
                     break;
                 default:
                     System.out.println("Si estas leyendo esto es que hay un error en el codigo");
@@ -56,16 +66,18 @@ public class Player extends Entity{
                 return true;
             }
             if (enemy.getHp() <= 0) {
+                this.spells = unmodifiedSpells;
                 return false;
             }
         }
-        return false;
     }
 
     void generatePlayerSpells() {
         super.spells = new ArrayList<>();
         super.spells.add(new AtaqueBasico(this));
         super.spells.add(new DefensaBasica(this));
+        super.spells.add(new LLuviaDePiedras(this));
+        super.spells.add(new VivaGym(this));
     }
 
     //A partir de aqui metodos privados
@@ -88,7 +100,7 @@ public class Player extends Entity{
         for (int i = 0; i < spells.size(); i++) {
             spellsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + Console.SPELL_COLOR + spells.get(i).getName() + Console.RESET +  spells.get(i).getSummary());
         }
-        spellsMenu.add(Console.DEFAULT_COLOR + spells.size() + 1 + ".- Volver" + Console.RESET);
+        spellsMenu.add(Console.DEFAULT_COLOR + (spells.size() + 1) + ".- Volver" + Console.RESET);
         return spellsMenu;
     }
 }

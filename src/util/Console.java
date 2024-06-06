@@ -11,6 +11,7 @@ public class Console {
     private static final int NAME_BOX_SIZE = 17;
     public static final String DEF_CHAR = "#";
     public static final String DMG_CHAR = "‡";
+    public static final String STS_CHAR = "S";
 
     //Reset
     public static final String RESET = "\u001B[0m";
@@ -63,6 +64,7 @@ public class Console {
     public static final String RELIC_COLOR = BRIGHT_YELLOW;
     public static final String ARMOR_COLOR = BRIGHT_CYAN;
     public static final String DAMAGE_COLOR = BRIGHT_RED;
+    public static final String STATUS_COLOR = BRIGHT_GREEN;
 
     public static void print(String message) {
         System.out.print(message + " ..." + RESET);
@@ -80,7 +82,7 @@ public class Console {
     }
 
     public static void printBackground(String message, String color, String backgroundColor) {
-        System.out.print(backgroundColor + color + message + RESET + " ...");
+        System.out.print(backgroundColor + color + message +  " ..." + RESET);
         sc.nextLine();
     }
 

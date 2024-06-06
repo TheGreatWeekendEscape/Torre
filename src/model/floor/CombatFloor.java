@@ -21,7 +21,7 @@ public class CombatFloor extends Floor{
             Console.print("Has muerto", Console.BAD_COLOR);
             return true;
         } else {
-            Console.print("Has vencido a " + enemy.getDisplayName(), Console.GOOD_COLOR);
+            Console.print("Has vencido a " + enemy.getDisplayName(), Console.DEFAULT_COLOR);
             return false;
         }
     }
