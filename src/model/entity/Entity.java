@@ -13,6 +13,7 @@ public abstract class Entity {
     protected int armor;
     protected ArrayList<Spell> spells;
     protected int gold;
+    protected int keys;
     protected String[] representation;
 
     public void gainHp(int amount) {
@@ -102,6 +103,14 @@ public abstract class Entity {
 
     public void setArmor(int armor) {
         this.armor = armor;
+    }
+
+    public int getKeys() {
+        return keys;
+    }
+
+    public void setKeys(int keys) {
+        this.keys = keys;
     }
 
     public ArrayList<Spell> getSpells() {

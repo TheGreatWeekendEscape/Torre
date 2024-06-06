@@ -31,4 +31,5 @@ public abstract class Enemy extends Entity {
     abstract void generateSpells();
     abstract void generateRepresentation();
     abstract void init();
+
 }

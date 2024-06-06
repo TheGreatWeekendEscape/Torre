@@ -2,16 +2,17 @@ package model.entity.enemy;
 
 import model.spell.AtaqueBasico;
 import model.spell.DefensaBasica;
+import model.spell.Escupitajo;
 
 import java.util.ArrayList;
 
-public class Manticoralojomora extends Enemy {
+public class Llamaga extends Enemy {
 
 
     @Override
     void init() {
-        super.displayName ="una manticoralojomora";
-        super.name = "Manticoralojomora";
+        super.displayName ="una llamaga";
+        super.name = "Llamaga";
         super.dificulty = 1;
         super.maxHp = generateHp(11);
         super.hp = maxHp;
@@ -22,7 +23,7 @@ public class Manticoralojomora extends Enemy {
     @Override
     void generateSpells() {
         super.spells = new ArrayList<>();
-        super.spells.add(new AtaqueBasico(this));
+        super.spells.add(new Escupitajo(this));
         super.spells.add(new DefensaBasica(this));
     }
 

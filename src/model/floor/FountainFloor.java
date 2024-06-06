@@ -7,7 +7,7 @@ public class FountainFloor extends Floor {
 
     public FountainFloor(int floorNum) {
         super(floorNum);
-        this.prob = 10;
+        this.prob = 5;
     }
 
     @Override

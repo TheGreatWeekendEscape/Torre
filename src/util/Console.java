@@ -1,6 +1,7 @@
 package util;
 
 import model.entity.Entity;
+import model.entity.Player;
 import model.spell.Spell;
 
 import java.util.ArrayList;
@@ -98,11 +99,6 @@ public class Console {
         sc.nextLine();
     }
 
-    public static void printRelic(String text, String relicName) {
-        System.out.print(DEFAULT_COLOR + text + RELIC_COLOR + relicName + RESET + DEFAULT_COLOR + " ..." + RESET);
-        sc.nextLine();
-    }
-
     public static void printArmor(String text, String armor) {
         System.out.print(DEFAULT_COLOR + text + ARMOR_COLOR + armor + DEF_CHAR + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
@@ -185,6 +181,15 @@ public class Console {
         System.out.println();
         System.out.println(PURPLE + centerString(playerHpDisplay, NAME_BOX_SIZE) + RESET + "      " + PURPLE + centerString(enemyHpDisplay, NAME_BOX_SIZE) + RESET);
         System.out.println();
+    }
+
+    public static void printChest(Player p) { //Se le pasa el player para que pueda imprimir las llaves
+        System.out.print(RELIC_COLOR);
+        System.out.println("  _____");
+        System.out.println(" /    /|");
+        System.out.println("|____| |    " + DEFAULT_COLOR + "Llaves: " + p.getKeys() + RELIC_COLOR);
+        System.out.println("| [] | |");
+        System.out.println("|____|/");
     }
 
     public static void printEnemy(Entity enemy) {

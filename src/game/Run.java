@@ -1,6 +1,7 @@
 package game;
 
 import controller.FloorController;
+import controller.RelicController;
 import model.floor.Floor;
 import model.entity.Player;
 import util.Console;
@@ -25,6 +26,9 @@ public class Run {
     }
 
     public boolean play() {
+        //Cosas antes de que empiece una run
+        RelicController.initRelics();
+
         while (!fin) {
             floorNum++;
             Console.printBackground("PISO " + floorNum + ":", Console.FLOOR_COLOR, Console.FLOOR_BACKGROUND);

@@ -2,8 +2,7 @@ package controller;
 
 import model.entity.Entity;
 import model.entity.enemy.Blob;
-import model.entity.enemy.Enemy;
-import model.entity.enemy.Manticoralojomora;
+import model.entity.enemy.Llamaga;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -23,7 +22,7 @@ public class EntityController {
 
         switch (enemyName) {
             case "Blob": return new Blob();
-            case "Manticoralojomora" : return new Manticoralojomora();
+            case "Manticoralojomora" : return new Llamaga();
             default: return null;
         }
     }

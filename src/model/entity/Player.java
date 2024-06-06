@@ -3,6 +3,7 @@ package model.entity;
 import model.potion.PocionDeFuego;
 import model.potion.PocionDeRoca;
 import model.potion.Potion;
+import model.relic.Relic;
 import model.spell.*;
 import util.Console;
 
@@ -12,6 +13,7 @@ public class Player extends Entity {
 
     private int maxPotions;
     private ArrayList<Potion> potions;
+    private ArrayList<Relic> relics;
 
     public Player(String name) {
         super.name = name;
@@ -23,8 +25,10 @@ public class Player extends Entity {
         super.hp = super.maxHp;
         super.armor = 0;
         super.gold = 0;
+        super.keys = 3;
         this.maxPotions = 3;
         this.potions = new ArrayList<>();
+        this.relics = new ArrayList<>();
         generatePlayerSpells();
         generatePotions();
     }
@@ -98,6 +102,19 @@ public class Player extends Entity {
         }
     }
 
+    public void addRelic (Relic r) {
+        this.relics.add(r);
+    }
+
+    public boolean hasRelic(String relicName) {
+        for (Relic r : relics) {
+            if (r.getName().equalsIgnoreCase(relicName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     //A partir de aqui metodos privados
 
     private void generatePotions() {
@@ -118,7 +135,7 @@ public class Player extends Entity {
         ArrayList<String> combatMenu = new ArrayList<>();
         String s1 = "1.- Hechizos";
         String s2 = "2.- Bolsa de pociones";
-        String s3 = "3.- Objetos";
+        String s3 = "3.- Tesoros";
         String s4 = "4.- Grimorio";
         combatMenu.add(s1);
         combatMenu.add(s2);
