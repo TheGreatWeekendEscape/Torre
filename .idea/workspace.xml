@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/RelicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/floor/ChestFloor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/relic/Billete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/relic/LlaveMaestra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/relic/Relic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/spell/Escupitajo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/EntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EntityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/FloorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FloorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Llamaga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/FountainFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/FountainFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/spell/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/spell/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Console.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,9 +24,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/out/production/Torre/game/Run.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/model/entity/Entity.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/model/entity/enemy/Manticoralojomora.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/model/entity/enemy/Llamaga.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/model/floor/ChestFloor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/model/floor/CombatFloor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/util/Console.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
