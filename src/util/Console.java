@@ -193,11 +193,16 @@ public class Console {
     }
 
     public static void printFountain(Player p) { //Se le pasa el player para que pueda imprimir la vida
-        System.out.println(PURPLE);
-        System.out.println(CYAN + "   \\ /");
-        System.out.println(PURPLE + "   ||  ");
-        System.out.println(" __||__ ");
+        System.out.println(BRIGHT_CYAN);
+        System.out.println("    ||");
+        System.out.println(WHITE + "   \\ /");
+        System.out.println(" __| |__");
+        System.out.println(" \\__ __/");
+        System.out.println("  |  | ");
         System.out.println("/______\\" + RESET);
+        System.out.println();
+
+
 
     }
 

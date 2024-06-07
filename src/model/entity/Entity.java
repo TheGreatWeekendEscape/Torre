@@ -16,10 +16,14 @@ public abstract class Entity {
     protected int keys;
     protected String[] representation;
 
-    public void gainHp(int amount) {
-        this.hp += amount;
-        if (this.hp > this.maxHp) {
-            this.hp = this.maxHp;
+    public int gainHp(int amount) {
+        int missingHealth = maxHp - hp;
+        if (amount <= missingHealth) {
+            this.hp += amount;
+            return amount;
+        } else {
+            this.hp = maxHp;
+            return missingHealth;
         }
     }
 
@@ -119,6 +123,10 @@ public abstract class Entity {
 
     public void setSpells(ArrayList<Spell> spells) {
         this.spells = spells;
+    }
+
+    public int getHealingForFountain() {
+        return this.maxHp / 2;
     }
 
     public int getGold() {
