@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class ChestFloor extends Floor {
 
-    public ChestFloor (int floorNum) {
+    public ChestFloor(int floorNum) {
         super(floorNum);
         this.prob = 5;
     }
@@ -19,13 +19,16 @@ public class ChestFloor extends Floor {
     public boolean trigger(Player p) {
         Console.printDefault("Encuentras un cofre");
         Console.printChest(p);
-        String chestOption = Console.printMenu(getChestMenu(p));
+
         boolean chestEnd = false;
         while (!chestEnd) {
+            String chestOption = Console.printMenu(getChestMenu(p));
             switch (chestOption) {
                 case "1":
                     if (p.getKeys() > 0) {
                         Console.printDefault("Gastas una llave en abrir el cofre");
+                        p.useKey();
+                        openChest(p);
                         chestEnd = true;
                     } else {
                         Console.printDefault("No puedes abrir el cofre si no tienes llaves");
@@ -39,6 +42,7 @@ public class ChestFloor extends Floor {
                     break;
                 case "3":
                     Console.printDefault("Abres el cofre con la llave maestra");
+                    openChest(p);
                     chestEnd = true;
                     break;
                 default:
@@ -52,14 +56,17 @@ public class ChestFloor extends Floor {
         ArrayList<String> chestMenu = new ArrayList<>();
         String s1 = "1.- Abrir";
         String s2 = "2.- Pasar de largo";
-        if (p.hasRelic("Llave maestra")) {
+        chestMenu.add(s1);
+        chestMenu.add(s2);
+        if (p.hasRelic("llavemaestra")) {
             String s3 = "3.- Usar la llave maestra";
+            chestMenu.add(s3);
         }
         return chestMenu;
     }
 
-    private void openChest() {
+    private void openChest(Player player) {
         Relic relic = RelicController.getRandRelic();
-        //Hacer que al abrir salga una reliquia y quizas algo de oro
+        player.addRelic(relic);
     }
 }

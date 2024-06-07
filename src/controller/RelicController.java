@@ -16,9 +16,6 @@ public class RelicController {
         relics = new ArrayList<>();
         relics.add(new Billete());
         relics.add(new LlaveMaestra());
-        for (int i = 0; i < 900;  i++) {
-            getRandRelic();
-        }
     }
 
     public static Relic getRandRelic() {

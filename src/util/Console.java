@@ -192,6 +192,15 @@ public class Console {
         System.out.println("|____|/");
     }
 
+    public static void printFountain(Player p) { //Se le pasa el player para que pueda imprimir la vida
+        System.out.println(PURPLE);
+        System.out.println(CYAN + "   \\ /");
+        System.out.println(PURPLE + "   ||  ");
+        System.out.println(" __||__ ");
+        System.out.println("/______\\" + RESET);
+
+    }
+
     public static void printEnemy(Entity enemy) {
         System.out.println();
         System.out.println(BLACK + PURPLE_BG + enemy.getName() + RESET);

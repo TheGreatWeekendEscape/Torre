@@ -36,6 +36,7 @@ public class Run {
             fin = floor.trigger(player);
         }
 
+        System.out.println("¿Quieres volver a jugar?");
         String option = Console.printMenu(getPlayagainMenu());
         if (option.equals("1")) {
             return true;

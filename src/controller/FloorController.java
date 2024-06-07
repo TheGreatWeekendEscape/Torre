@@ -35,6 +35,6 @@ public class FloorController {
     }
 
     public static Floor getRandFloor(int floorNum) {
-        return new ChestFloor(floorNum);
+        return new FountainFloor(floorNum);
     }
 }
