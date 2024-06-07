@@ -25,7 +25,7 @@ public class Player extends Entity {
         super.hp = super.maxHp;
         super.armor = 0;
         super.gold = 0;
-        super.keys = 3;
+        super.keys = 1;
         this.maxPotions = 3;
         this.potions = new ArrayList<>();
         this.relics = new ArrayList<>();
@@ -103,16 +103,24 @@ public class Player extends Entity {
     }
 
     public void addRelic (Relic r) {
+        r.activate(this);
         this.relics.add(r);
     }
 
-    public boolean hasRelic(String relicName) {
+    public boolean hasRelic(String relicId) {
         for (Relic r : relics) {
-            if (r.getName().equalsIgnoreCase(relicName)) {
+            if (r.getId().equalsIgnoreCase(relicId)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public void useKey() {
+        this.keys -= 1;
+        if (keys < 0) {
+            keys = 0;
+        }
     }
 
     //A partir de aqui metodos privados
