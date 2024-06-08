@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/FloorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FloorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/RelicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RelicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/ChestFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/ChestFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/floor/FountainFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/FountainFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/relic/Billete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/relic/Billete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/relic/LlaveMaestra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/relic/LlaveMaestra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/relic/Relic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/relic/Relic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
