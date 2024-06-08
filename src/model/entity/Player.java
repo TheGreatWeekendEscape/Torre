@@ -3,6 +3,7 @@ package model.entity;
 import model.potion.PocionDeFuego;
 import model.potion.PocionDeRoca;
 import model.potion.Potion;
+import model.relic.Manguitos;
 import model.relic.Relic;
 import model.spell.*;
 import util.Console;
