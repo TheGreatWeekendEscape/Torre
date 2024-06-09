@@ -1,30 +1,34 @@
 package controller;
 
+import model.entity.Player;
 import model.floor.Floor;
 import model.relic.Billete;
 import model.relic.LlaveMaestra;
+import model.relic.Manguitos;
 import model.relic.Relic;
+import model.spell.Spell;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class RelicController {
 
-    private static ArrayList<Relic> relics;
+    private static ArrayList<Relic> normalPool = generateRelics();
 
-    public static void initRelics() {
-        relics = new ArrayList<>();
-        relics.add(new Billete());
-        relics.add(new LlaveMaestra());
+    public static ArrayList<Relic> generateRelics() {
+        ArrayList<Relic> generatedRelics = new ArrayList<>();
+        generatedRelics.add(new Billete());
+        generatedRelics.add(new LlaveMaestra());
+        generatedRelics.add(new Manguitos());
+        return generatedRelics;
     }
 
-    public static Relic getRandRelic() {
+    public static Relic getNewRandRelic(Player p) {
         Random rand = new Random();
-        if (!relics.isEmpty()) { //Deberia controlar que pasa si no quedan relics pero en principio no pasara?
-            Relic r = relics.get(rand.nextInt(relics.size()));
-            relics.remove(r);
-            return r;
-        }
-        return null;
+        Relic r;
+        do {
+            r = normalPool.get(rand.nextInt(normalPool.size()));
+        } while (p.hasRelic(r.getId()));
+        return r;
     }
 }

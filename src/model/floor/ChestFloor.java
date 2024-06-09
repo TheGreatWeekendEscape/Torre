@@ -10,8 +10,7 @@ import java.util.Random;
 
 public class ChestFloor extends Floor {
 
-    public ChestFloor(int floorNum) {
-        super(floorNum);
+    public ChestFloor() {
         this.prob = 5;
     }
 
@@ -66,7 +65,7 @@ public class ChestFloor extends Floor {
     }
 
     private void openChest(Player player) {
-        Relic relic = RelicController.getRandRelic();
+        Relic relic = RelicController.getNewRandRelic(player);
         player.addRelic(relic);
     }
 }

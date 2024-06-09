@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public class FountainFloor extends Floor {
 
-    public FountainFloor(int floorNum) {
-        super(floorNum);
+    public FountainFloor() {
         this.prob = 5;
     }
 

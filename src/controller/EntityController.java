@@ -22,7 +22,7 @@ public class EntityController {
 
         switch (enemyName) {
             case "Blob": return new Blob();
-            case "Manticoralojomora" : return new Llamaga();
+            case "Llamaga" : return new Llamaga();
             default: return null;
         }
     }
@@ -30,7 +30,7 @@ public class EntityController {
     private static ArrayList<String> generatePool0 () {
         ArrayList<String> pool0 = new ArrayList<>();
         pool0.add("Blob");
-        pool0.add("Manticoralojomora");
+        pool0.add("Llamaga");
         return pool0;
     }
 }

@@ -5,8 +5,7 @@ import util.Console;
 
 public class EventFloor extends Floor{
 
-    public EventFloor (int floorNum) {
-        super(floorNum);
+    public EventFloor () {
         this.prob = 15;
     }
 

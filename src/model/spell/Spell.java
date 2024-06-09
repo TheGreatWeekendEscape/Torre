@@ -11,8 +11,7 @@ public abstract class Spell implements Cloneable{
     protected Type type;
     protected Entity caster;
 
-    public Spell(Entity caster) {
-        this.caster = caster;
+    public Spell() {
         init();
     }
 

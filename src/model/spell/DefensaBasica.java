@@ -5,8 +5,8 @@ import util.Console;
 
 public class DefensaBasica extends Spell{
 
-    public DefensaBasica (Entity caster) {
-        super(caster);
+    public DefensaBasica () {
+        super();
     }
 
     @Override

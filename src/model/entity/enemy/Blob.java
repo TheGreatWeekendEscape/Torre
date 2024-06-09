@@ -22,8 +22,8 @@ public class Blob extends Enemy {
     @Override
     void generateSpells() {
         super.spells = new ArrayList<>();
-        super.spells.add(new AtaqueBasico(this));
-        super.spells.add(new DefensaBasica(this));
+        super.addSpell(new AtaqueBasico());
+        super.addSpell(new DefensaBasica());
     }
 
     @Override

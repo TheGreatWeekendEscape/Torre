@@ -5,8 +5,8 @@ import util.Console;
 
 public class Escupitajo extends Spell {
 
-    public Escupitajo (Entity caster) {
-        super(caster);
+    public Escupitajo () {
+        super();
     }
 
     @Override
