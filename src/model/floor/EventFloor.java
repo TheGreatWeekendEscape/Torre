@@ -1,5 +1,6 @@
 package model.floor;
 
+import controller.FloorController;
 import model.entity.Player;
 import util.Console;
 
@@ -11,7 +12,8 @@ public class EventFloor extends Floor{
 
     @Override
     public boolean trigger(Player p) {
-        Console.print("Encuentras un evento", Console.DEFAULT_COLOR);
+        Floor eventFloor = FloorController.getEventFloor();
+        eventFloor.trigger(p);
         return false;
     }
 }

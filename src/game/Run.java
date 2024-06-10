@@ -1,12 +1,10 @@
 package game;
 
 import controller.FloorController;
-import controller.RelicController;
 import model.floor.Floor;
 import model.entity.Player;
 import util.Console;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class Run {
@@ -29,7 +27,7 @@ public class Run {
         while (!fin) {
             floorNum++;
             Console.printBackground("PISO " + floorNum + ":", Console.FLOOR_COLOR, Console.FLOOR_BACKGROUND);
-            Floor floor = FloorController.getRandFloor(floorNum);
+            Floor floor = FloorController.getMainFloor();
             fin = floor.trigger(player);
         }
 

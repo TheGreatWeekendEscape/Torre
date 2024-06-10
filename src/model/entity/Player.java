@@ -26,7 +26,7 @@ public class Player extends Entity {
         super.hp = super.maxHp;
         super.armor = 0;
         super.gold = 0;
-        super.keys = 1;
+        super.keys = 0;
         this.maxPotions = 3;
         this.potions = new Potion[maxPotions];
         this.relics = new ArrayList<>();
@@ -103,7 +103,12 @@ public class Player extends Entity {
         }
     }
 
-    //addSpell() in superclass
+    @Override
+    public void addSpell(Spell s) {
+        s.setCaster(this);
+        Console.printDefault("Obtienes " + s.getName());
+        this.spells.add(s);
+    }
 
     public void addRelic (Relic r) {
         r.activate(this);
@@ -200,8 +205,15 @@ public class Player extends Entity {
 
     private void generatePlayerSpells() {
         super.spells = new ArrayList<>();
-        super.spells.add(new AtaqueBasico());
-        super.spells.add(new DefensaBasica());
+        AtaqueBasico s1 = new AtaqueBasico();
+        DefensaBasica s2 = new DefensaBasica();
+        LLuviaDePiedras s3 = new LLuviaDePiedras();
+        s1.setCaster(this);
+        s2.setCaster(this);
+        s3.setCaster(this);
+        super.spells.add(s1);
+        super.spells.add(s2);
+        super.spells.add(s3);
     }
 
     private ArrayList<String> getCombatMenu(String enemySpellName) {

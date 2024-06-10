@@ -142,9 +142,5 @@ public abstract class Entity {
         this.representation = representation;
     }
 
-    protected void addSpell(Spell s) {
-        s.setCaster(this);
-        Console.printDefault("Obtienes " + s.getName() + " hola");
-        this.spells.add(s);
-    }
+    public abstract void addSpell(Spell s);
 }

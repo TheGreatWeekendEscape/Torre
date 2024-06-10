@@ -23,8 +23,8 @@ public class Llamaga extends Enemy {
     @Override
     void generateSpells() {
         super.spells = new ArrayList<>();
-        super.addSpell(new Escupitajo());
-        super.addSpell(new DefensaBasica());
+        addSpell(new Escupitajo());
+        addSpell(new DefensaBasica());
     }
 
     @Override
