@@ -16,7 +16,6 @@ public class EventPriestFloor  extends Floor {
 
     @Override
     public boolean trigger(Player p) {
-        p.setGold(200);
         Console.printDefault("Te encuentras a un sacerdote que ofrece sus servicios");
         Spell s = SpellController.getNewRandSpell(p);
         boolean priestEnd = false;

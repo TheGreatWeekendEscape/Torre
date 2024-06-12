@@ -24,7 +24,7 @@ public class Run {
     }
 
     public boolean play() {
-        //Cosas que hay que resetear ahora que empieza nueva run
+        //Stuff to reset before a new run is played
         FloorController.generateEventFloors();
 
 
