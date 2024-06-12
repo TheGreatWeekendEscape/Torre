@@ -5,12 +5,7 @@ import util.Console;
 
 public abstract class Floor {
 
-    protected int floorNumber;
     protected int prob; //Probabilidad sobre 100 de salir
-
-    public Floor (int floorNum) {
-        this.floorNumber = floorNum;
-    }
 
     public abstract boolean trigger(Player p);
 

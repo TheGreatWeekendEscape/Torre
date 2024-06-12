@@ -4,8 +4,8 @@ import model.entity.Entity;
 import util.Console;
 
 public class VivaGym  extends Spell {
-    public VivaGym (Entity caster) {
-        super(caster);
+    public VivaGym () {
+        super();
     }
 
     @Override

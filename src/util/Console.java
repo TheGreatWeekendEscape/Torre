@@ -57,7 +57,6 @@ public class Console {
 
     // Finals
     public static final String DEFAULT_COLOR = BLUE;
-    public static final String ITEM_COLOR = YELLOW;
     public static final String BAD_COLOR = RED;
     public static final String GOOD_COLOR = GREEN;
     public static final String FLOOR_COLOR = BLACK;
@@ -68,6 +67,7 @@ public class Console {
     public static final String DAMAGE_COLOR = BRIGHT_RED;
     public static final String STATUS_COLOR = BRIGHT_GREEN;
     public static final String POTION_COLOR = BRIGHT_RED;
+    public static final String GOLD_COLOR = YELLOW;
 
     public static void printDefault(String message) {
         System.out.print(Console.DEFAULT_COLOR + message + DEFAULT_COLOR + " ..." + RESET);
@@ -117,6 +117,10 @@ public class Console {
     public static void printBad(String text, String bad) {
         System.out.print(DEFAULT_COLOR + text + BAD_COLOR + bad + RESET + DEFAULT_COLOR + " ..." + RESET);
         sc.nextLine();
+    }
+
+    public static void printGold(Player p) {
+        System.out.println(DEFAULT_COLOR + "Tienes " + BRIGHT_YELLOW + p.getGold() + "g" + RESET);
     }
 
     public static String printMenu(ArrayList<String> menu) {

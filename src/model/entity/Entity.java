@@ -1,6 +1,7 @@
 package model.entity;
 
 import model.spell.Spell;
+import util.Console;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -140,4 +141,6 @@ public abstract class Entity {
     public void setRepresentation(String[] representation) {
         this.representation = representation;
     }
+
+    public abstract void addSpell(Spell s);
 }

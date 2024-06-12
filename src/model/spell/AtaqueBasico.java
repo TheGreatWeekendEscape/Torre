@@ -5,10 +5,6 @@ import util.Console;
 
 public class AtaqueBasico extends Spell {
 
-    public AtaqueBasico (Entity caster) {
-        super(caster);
-    }
-
     @Override
     void init() {
         super.name = Console.SPELL_COLOR + "Ataque basico" + Console.RESET;

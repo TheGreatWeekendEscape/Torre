@@ -4,8 +4,8 @@ import model.entity.Entity;
 import util.Console;
 
 public class LLuviaDePiedras extends Spell{
-    public LLuviaDePiedras (Entity caster) {
-        super(caster);
+    public LLuviaDePiedras () {
+        super();
     }
 
     @Override

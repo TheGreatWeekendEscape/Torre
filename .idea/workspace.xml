@@ -4,6 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/floor/EventMoneyFloor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/floor/EventPotionsFloor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/floor/EventPriestFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/FloorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FloorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Npc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entity/enemy/Llamaga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entity/enemy/Llamaga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/floor/EventFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/floor/EventFloor.java" afterDir="false" />
+    </list>
     <list default="true" id="0e0d7175-d3ab-42f1-ad7c-190b01661390" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
