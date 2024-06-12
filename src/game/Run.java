@@ -24,6 +24,10 @@ public class Run {
     }
 
     public boolean play() {
+        //Cosas que hay que resetear ahora que empieza nueva run
+        FloorController.generateEventFloors();
+
+
         while (!fin) {
             floorNum++;
             Console.printBackground("PISO " + floorNum + ":", Console.FLOOR_COLOR, Console.FLOOR_BACKGROUND);

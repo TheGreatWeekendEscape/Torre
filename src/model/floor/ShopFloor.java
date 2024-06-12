@@ -19,7 +19,6 @@ public class ShopFloor extends Floor {
 
     @Override
     public boolean trigger(Player p) {
-        p.setGold(200);
         Console.printDefault("Encuentras un anciano");
         Console.printDefault("No habla pero te muestra objetos que tiene a la venta");
         boolean shopEnd = false;

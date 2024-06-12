@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class SpellController {
 
-    private static ArrayList<Spell> normalPool = generateSpells();
+    private static ArrayList<Spell> normalPool = generateNormalPool();
 
 
     public static Spell getNewRandSpell(Player p) {
@@ -20,7 +20,7 @@ public class SpellController {
         return s;
     }
 
-    private static ArrayList<Spell> generateSpells() {
+    private static ArrayList<Spell> generateNormalPool() {
         ArrayList<Spell> generatedSpells = new ArrayList<>();
         generatedSpells.add(new AtaqueBasico());
         generatedSpells.add(new DefensaBasica());

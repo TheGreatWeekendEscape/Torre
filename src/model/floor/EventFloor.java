@@ -13,6 +13,7 @@ public class EventFloor extends Floor{
     @Override
     public boolean trigger(Player p) {
         Floor eventFloor = FloorController.getEventFloor();
+        eventFloor = new EventPriestFloor();
         eventFloor.trigger(p);
         return false;
     }

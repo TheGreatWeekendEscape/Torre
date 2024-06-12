@@ -8,7 +8,7 @@ import java.util.Random;
 public class FloorController {
 
     private static ArrayList<Floor> mainFloors = generateMainFloors();
-    private static ArrayList<Floor> eventFloors = generateEventFloors();
+    private static ArrayList<Floor> eventFloors;
 
     public static Floor getMainFloorD() {
         Random r = new Random();
@@ -24,9 +24,12 @@ public class FloorController {
         return null;
     }
 
+    //Coge un evento random y lo saca del array para que no se repitan entre runs
     public static Floor getEventFloor() {
         Random r = new Random();
-        return eventFloors.get(r.nextInt(eventFloors.size()));
+        Floor f = eventFloors.get(r.nextInt(eventFloors.size()));
+        eventFloors
+        return
     }
 
     public static Floor getMainFloor() {
@@ -43,7 +46,7 @@ public class FloorController {
         return floors;
     }
 
-    private static ArrayList<Floor> generateEventFloors() {
+    public static ArrayList<Floor> generateEventFloors() {
         ArrayList<Floor> floors = new ArrayList<>();
         floors.add(new EventPotionsFloor());
         floors.add(new EventPriestFloor());

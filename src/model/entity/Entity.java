@@ -17,6 +17,10 @@ public abstract class Entity {
     protected int keys;
     protected String[] representation;
 
+    public int fullHeal() {
+        return gainHp(maxHp);
+    }
+
     public int gainHp(int amount) {
         int missingHealth = maxHp - hp;
         if (amount <= missingHealth) {
