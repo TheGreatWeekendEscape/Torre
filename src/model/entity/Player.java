@@ -220,6 +220,22 @@ public class Player extends Entity {
 
     }
 
+    public int getPotionsAmount() {
+        int amount = 0;
+        for (int i = 0; i < potions.length; i++) {
+            if (potions[i] != null) {
+                amount++;
+            }
+        }
+        return amount;
+    }
+
+    public void emptyPotionBag() {
+        for (int i = 0; i < potions.length; i++) {
+            potions[i] = null;
+        }
+    }
+
 
     //A partir de aqui metodos privados
 

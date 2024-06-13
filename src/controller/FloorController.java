@@ -10,11 +10,11 @@ public class FloorController {
     private static ArrayList<Floor> mainFloors = generateMainFloors();
     private static ArrayList<Floor> eventFloors;
 
-    public static Floor getMainFloorDev() {
-        return new EventCrowFloor();
+    public static Floor getMainFloor() {
+        return new EventSellpotionsFloor();
     }
 
-    public static Floor getMainFloor() {
+    public static Floor getMainFloor2() {
         Random r = new Random();
         double rand = r.nextDouble() * 100;
         double totalSum = 0;
@@ -54,5 +54,6 @@ public class FloorController {
         eventFloors.add(new EventPotionsFloor());
         eventFloors.add(new EventPriestFloor());
         eventFloors.add(new EventCrowFloor());
+        eventFloors.add(new EventSellpotionsFloor());
     }
 }

@@ -22,6 +22,8 @@ public class PotionController {
         generatedPotions.add(new AguaDeFuente());
         generatedPotions.add(new PocionDeViento());
         generatedPotions.add(new JugoDeMago());
+        generatedPotions.add(new PocionDeAgua());
+        generatedPotions.add(new ElixirDeSuerte());
         return generatedPotions;
     }
 }
