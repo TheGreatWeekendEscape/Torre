@@ -41,8 +41,8 @@ public abstract class Enemy extends Entity {
         }
     }
 
-    int generateHp(int baseHp) {
-        return rand.nextInt(baseHp - 3, baseHp + 3); //Comprobar que funciona
+    int generateHp(int baseHp, int variation) {
+        return rand.nextInt(baseHp - variation, baseHp + variation); //Comprobar que funciona
     }
 
     @Override

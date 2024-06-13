@@ -3,13 +3,13 @@ package model.spell;
 import model.entity.Entity;
 import util.Console;
 
-public class DefensaBasica extends Spell{
+public class Muro extends Spell {
 
     @Override
     void init() {
-        super.name = Console.SPELL_COLOR + "Defensa basica" + Console.RESET;
+        super.name = Console.SPELL_COLOR + "Muro" + Console.RESET;
         super.damage = 0;
-        super.defense = 5;
+        super.defense = 8;
         super.hits = 0;
         super.heal = 0;
         super.type = Type.ROCK;

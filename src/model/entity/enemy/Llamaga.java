@@ -1,9 +1,6 @@
 package model.entity.enemy;
 
-import model.spell.AtaqueBasico;
-import model.spell.DefensaBasica;
-import model.spell.Escupitajo;
-import model.spell.Type;
+import model.spell.*;
 
 import java.util.ArrayList;
 
@@ -15,7 +12,7 @@ public class Llamaga extends Enemy {
         super.displayName ="una llamaga";
         super.name = "Llamaga";
         super.dificulty = 1;
-        super.maxHp = generateHp(11);
+        super.maxHp = generateHp(12, 3);
         super.hp = maxHp;
         super.type = Type.NORMAL;
         generateRepresentation();
@@ -27,6 +24,7 @@ public class Llamaga extends Enemy {
         super.spells = new ArrayList<>();
         addSpell(new Escupitajo());
         addSpell(new DefensaBasica());
+        addSpell(new Chapoteo());
     }
 
     @Override

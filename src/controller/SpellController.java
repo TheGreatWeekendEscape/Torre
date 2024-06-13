@@ -1,7 +1,6 @@
 package controller;
 
 import model.entity.Entity;
-import model.entity.Player;
 import model.spell.*;
 
 import java.util.ArrayList;
@@ -26,8 +25,14 @@ public class SpellController {
         generatedSpells.add(new AtaqueBasico());
         generatedSpells.add(new DefensaBasica());
         generatedSpells.add(new Escupitajo());
-        generatedSpells.add(new Plantasia());
+        generatedSpells.add(new VivaGym());
         generatedSpells.add(new Ascua());
+        generatedSpells.add(new PimPamPum());
+        generatedSpells.add(new LluviaDeAire());
+        generatedSpells.add(new LanzaHelada());
+        generatedSpells.add(new Abucheo());
+        generatedSpells.add(new Muro());
+        generatedSpells.add(new Chapoteo());
         return generatedSpells;
     }
 }

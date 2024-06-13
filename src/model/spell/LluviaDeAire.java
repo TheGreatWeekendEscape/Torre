@@ -3,16 +3,16 @@ package model.spell;
 import model.entity.Entity;
 import util.Console;
 
-public class AtaqueBasico extends Spell {
+public class LluviaDeAire extends Spell {
 
     @Override
     void init() {
-        super.name = Console.SPELL_COLOR + "Ataque basico" + Console.RESET;
-        super.damage = 5;
+        super.name = Console.SPELL_COLOR + "Lluvia de aire" + Console.RESET;
+        super.damage = 1;
         super.defense = 0;
-        super.hits = 1;
+        super.hits = 10;
         super.heal = 0;
-        super.type = Type.NORMAL;
+        super.type = Type.WIND;
     }
 
     @Override
@@ -23,12 +23,12 @@ public class AtaqueBasico extends Spell {
 
     @Override
     public String getSummary() {
-        return Console.DEFAULT_COLOR + " [" + Console.DAMAGE_COLOR + super.damage + Console.DMG_CHAR + Console.DEFAULT_COLOR + "] " +
+        return Console.DEFAULT_COLOR + " [" + Console.DAMAGE_COLOR + super.damage + "x" + super.hits + Console.DMG_CHAR + Console.DEFAULT_COLOR + "] " +
                 type.getDisplayName();
     }
 
     @Override
     public String getDesc() {
-        return "Inflige " + super.damage + " de daño";
+        return "Inflige " + super.damage + "x" + super.hits + " de daño";
     }
 }

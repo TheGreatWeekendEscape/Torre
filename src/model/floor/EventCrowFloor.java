@@ -1,6 +1,7 @@
 package model.floor;
 
 import model.entity.Player;
+import model.entity.enemy.Currito;
 import util.Console;
 
 import java.util.ArrayList;
@@ -21,7 +22,17 @@ public class EventCrowFloor extends Floor {
         String crowOption = Console.printMenu(getCrowMenu());
         switch (crowOption) {
             case "1":
-                Console.printDefault("Has sido mas rapido que el cuervo");
+                    if (rand.nextBoolean()) {
+                        Console.printDefault("Has sido mas rapido que el cuervo y coges lo que hay en el nido");
+                    } else {
+                        Console.printDefault("El cuervo te corta el paso");
+                        if (p.fight(new Currito())) {
+                            return true;
+                        } else {
+                            Console.printDefault("Ahora que el cuervo ha muerto coges lo que hay en el nido");
+                        }
+                    }
+
                 p.addGold(nestGold);
                 break;
             case "2":

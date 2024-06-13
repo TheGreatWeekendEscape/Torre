@@ -240,22 +240,19 @@ public class Player extends Entity {
     //A partir de aqui metodos privados
 
     private void generatePotions() {
-        this.potions[0] = new JugoDeMago();
-        this.potions[1] = new ElixirDeSuerte();
-        this.potions[2] = new CoctelMolotov();
+        this.potions[0] = null;
+        this.potions[1] = null;
+        this.potions[2] = null;
     }
 
     private void generatePlayerSpells() {
         super.spells = new ArrayList<>();
         Spell s1 = new AtaqueBasico();
         Spell s2 = new DefensaBasica();
-        Spell s3 = new LanzaHelada();
         s1.setCaster(this);
         s2.setCaster(this);
-        s3.setCaster(this);
         super.spells.add(s1);
         super.spells.add(s2);
-        super.spells.add(s3);
     }
 
     private ArrayList<String> getCombatMenu(String enemySpellName) {

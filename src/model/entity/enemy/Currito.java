@@ -4,14 +4,14 @@ import model.spell.*;
 
 import java.util.ArrayList;
 
-public class Blob extends Enemy {
+public class Currito extends Enemy {
 
     @Override
     void init() {
-        super.displayName = "un blob";
-        super.name = "Blob";
+        super.displayName = "un cuervo";
+        super.name = "Currito";
         super.dificulty = 1;
-        super.maxHp = generateHp(14, 3);
+        super.maxHp = generateHp(25, 2);
         super.hp = maxHp;
         super.type = Type.WIND;
         generateRepresentation();
@@ -21,19 +21,18 @@ public class Blob extends Enemy {
     @Override
     void generateSpells() {
         super.spells = new ArrayList<>();
+        super.addSpell(new PimPamPum());
         super.addSpell(new LluviaDeAire());
-        super.addSpell(new AtaqueBasico());
-        super.addSpell(new Abucheo());
-        super.addSpell(new Muro());
+        super.addSpell(new VivaGym());
     }
 
     @Override
     void generateRepresentation () {
         super.representation = new String[5];
-        super.representation[0] = "/     \\";
-        super.representation[1] = "|() ()|";
-        super.representation[2] = "\\  ^  /";
-        super.representation[3] = "  \\\\\\\\\\";
-        super.representation[4] = "  \\\\\\\\\\";
+        super.representation[0] = "  /";
+        super.representation[1] = " <o)";
+        super.representation[2] = "(\\\\_//";
+        super.representation[3] = " (_\\_)";
+        super.representation[4] = "  _|_";
     }
 }

@@ -3,14 +3,11 @@ package model.spell;
 import model.entity.Entity;
 import util.Console;
 
-public class Plantasia extends Spell {
-    public Plantasia() {
-        super();
-    }
+public class Chapoteo extends Spell {
 
     @Override
     void init() {
-        super.name = Console.SPELL_COLOR + "Plantasia" + Console.RESET;
+        super.name = Console.SPELL_COLOR + "Chapoteo" + Console.RESET;
         super.damage = 0;
         super.defense = 0;
         super.hits = 0;
@@ -21,9 +18,11 @@ public class Plantasia extends Spell {
     @Override
     public void cast(Entity target) {
         for (Spell spell : super.caster.getSpells()) {
-            spell.addDamage(1);
+            if (spell.getType() == Type.WATER) {
+                spell.setHeal(spell.getHeal() + 1);
+            }
         }
-        Console.print(super.caster.getName() + " se siente mas fuerte", Console.DEFAULT_COLOR);
+        Console.print(super.caster.getName() + " se siente bien fresh", Console.DEFAULT_COLOR);
     }
 
     @Override
@@ -34,6 +33,6 @@ public class Plantasia extends Spell {
 
     @Override
     public String getDesc() {
-        return "Durante el resto del combate todos tus hechizos ganan 1 de danio";
+        return "Durante el resto del combate los hechizos de agua curan 1 punto mas";
     }
 }

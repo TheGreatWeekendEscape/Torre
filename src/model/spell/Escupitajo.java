@@ -9,7 +9,7 @@ public class Escupitajo extends Spell {
     @Override
     void init() {
         super.name = Console.SPELL_COLOR + "Escupitajo" + Console.RESET;
-        super.damage = 5;
+        super.damage = 6;
         super.defense = 0;
         super.hits = 1;
         super.heal = 2;
