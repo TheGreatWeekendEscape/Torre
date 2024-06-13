@@ -1,9 +1,7 @@
 package model.entity;
 
-import model.potion.PocionDeFuego;
-import model.potion.PocionDeRoca;
-import model.potion.Potion;
-import model.relic.Manguitos;
+import model.entity.enemy.Enemy;
+import model.potion.*;
 import model.relic.Relic;
 import model.spell.*;
 import util.Console;
@@ -35,7 +33,7 @@ public class Player extends Entity {
     }
 
 
-    public boolean fight(Entity enemy) {
+    public boolean fight(Enemy enemy) {
         ArrayList<Spell> unmodifiedSpells = new ArrayList<>();
         boolean nextTurn = true;
         Spell enemySpell = null;
@@ -55,7 +53,7 @@ public class Player extends Entity {
                     int spellOption = Integer.parseInt(Console.printMenu(getSpellsMenu()));
                     if (spellOption <= super.spells.size()) { //Si no ha elegido volver
                         Spell playerSpell = super.spells.get(spellOption - 1);
-                        Console.printDefault("Usas " +  playerSpell.getName());
+                        Console.printDefault("Usas " + playerSpell.getName());
                         playerSpell.cast(enemy);
                         if (enemy.getHp() > 0) {
                             Console.printDefault(enemy.getName() + " usa " + enemySpell.getName());
@@ -76,16 +74,17 @@ public class Player extends Entity {
                         } else {
                             Console.printPotion("Usas ", potion.getName());
                             potion.drink(this, enemy);
-                            this.potions[potionOption -1 ] = null;
+                            this.potions[potionOption - 1] = null;
                         }
 
                     }
                     nextTurn = false;
                     break;
-                case "3": //Objects
+                case "3": //Objetos
+                    Console.printRelics(relics);
                     nextTurn = false;
                     break;
-                case "4": //Info
+                case "4": //Grimorio
                     Console.printGrimoire(this, enemySpell);
                     nextTurn = false;
                     break;
@@ -93,14 +92,30 @@ public class Player extends Entity {
                     System.out.println("Si estas leyendo esto es que hay un error en el codigo");
             }
 
-            if (super.hp <= 0) {
+            if (super.hp <= 0) { //Fight lost
+                Console.print("Has muerto", Console.BAD_COLOR);
                 return true;
             }
-            if (enemy.getHp() <= 0) {
-                this.spells = unmodifiedSpells;
+            if (enemy.getHp() <= 0) { //Fight won
+                Console.print("Has vencido a " + enemy.getName(), Console.DEFAULT_COLOR);
+                this.spells = unmodifiedSpells; //Reset all modifications to spells
+                addGold(enemy.getGold());
+                addKeys(enemy.getKeys());
+                if (enemy.getSpellDrop() != null) {
+                    addSpell(enemy.getSpellDrop());
+                }
                 return false;
             }
         }
+    }
+
+    public boolean hasFreePotionSlot() {
+        for (int i = 0; i < potions.length; i++) {
+            if (potions[i] == null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -110,38 +125,53 @@ public class Player extends Entity {
         this.spells.add(s);
     }
 
-    public void addRelic (Relic r) {
+    public void addKeys(int amount) {
+        if (amount == 1) {
+            Console.printDefault("Obtienes " + Console.KEY_COLOR + "llave" + Console.RESET);
+        } else if (amount > 1) {
+            Console.printDefault("Obtienes " + Console.KEY_COLOR + amount + " llaves" + Console.RESET);
+        }
+
+    }
+
+    public void addGold(int amount) {
+        super.gold += amount;
+        Console.printDefault("Obtienes " + Console.GOLD_COLOR + amount + "g" + Console.RESET);
+    }
+
+    public void addRelic(Relic r) {
         r.activate(this);
         Console.printDefault("Obtienes " + r.getName());
         Console.printDefault(r.getFoundText());
         this.relics.add(r);
     }
 
-    public boolean addPotion(Potion p) {
-        for (int i = 0; i < potions.length; i++) {
-            if (potions[i] == null) {
-                potions[i] = p;
-                Console.printDefault("Obtienes " + p.getName());
-                return true;
+    public void addPotion(Potion p) {
+        if (hasFreePotionSlot()) {
+            for (int i = 0; i < potions.length; i++) {
+                if (potions[i] == null) {
+                    potions[i] = p;
+                    Console.printDefault("Obtienes " + p.getName());
+                    break;
+                }
+            }
+        } else {
+            Console.printDefault("Obtienes " + p.getName() + Console.DEFAULT_COLOR + " pero no tienes hueco para guardar mas pociones");
+            Console.printDefault("Quieres tirar alguna pocion para hacer hueco?");
+            int discardPotionsOption = Integer.parseInt(Console.printMenu(getPotionsDiscardMenu(p)));
+            if (discardPotionsOption == potions.length + 1) {
+                Console.printDefault("Te quedas con las pociones que tenias");
+            } else {
+                Console.printDefault("Tiras " + potions[discardPotionsOption - 1].getName());
+                potions[discardPotionsOption - 1] = null;
+                addPotion(p);
             }
         }
-        Console.printDefault("No tienes hueco para guardar mas pociones");
-        return false;
-
     }
 
     public boolean hasRelic(String relicId) {
         for (Relic r : relics) {
             if (r.getId().equalsIgnoreCase(relicId)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean hasSpell(Spell spell) {
-        for (Spell s : spells) {
-            if (spell.getName().equalsIgnoreCase(s.getName())) {
                 return true;
             }
         }
@@ -155,22 +185,18 @@ public class Player extends Entity {
         }
     }
 
-    public boolean buy(Potion p , int price) {
+    public boolean buy(Potion p, int price) {
         if (this.gold >= price) {
-            if (addPotion(p)) {
-                this.gold -= price;
-                return true;
-            } else {
-                return false;
-            }
+            addPotion(p);
+            this.gold -= price;
+            return true;
         } else {
             Console.printDefault("No tienes dinero suficiente");
             return false;
         }
-
     }
 
-    public boolean buy(Relic r , int price) {
+    public boolean buy(Relic r, int price) {
         if (this.gold >= price) {
             this.gold -= price;
             addRelic(r);
@@ -182,7 +208,7 @@ public class Player extends Entity {
 
     }
 
-    public boolean buy(Spell s , int price) {
+    public boolean buy(Spell s, int price) {
         if (this.gold >= price) {
             this.gold -= price;
             addSpell(s);
@@ -194,20 +220,36 @@ public class Player extends Entity {
 
     }
 
+    public int getPotionsAmount() {
+        int amount = 0;
+        for (int i = 0; i < potions.length; i++) {
+            if (potions[i] != null) {
+                amount++;
+            }
+        }
+        return amount;
+    }
+
+    public void emptyPotionBag() {
+        for (int i = 0; i < potions.length; i++) {
+            potions[i] = null;
+        }
+    }
+
 
     //A partir de aqui metodos privados
 
     private void generatePotions() {
-        this.potions[0] = new PocionDeFuego();
-        this.potions[1] = null;
-        this.potions[2] = null;
+        this.potions[0] = new JugoDeMago();
+        this.potions[1] = new ElixirDeSuerte();
+        this.potions[2] = new CoctelMolotov();
     }
 
     private void generatePlayerSpells() {
         super.spells = new ArrayList<>();
-        AtaqueBasico s1 = new AtaqueBasico();
-        DefensaBasica s2 = new DefensaBasica();
-        LLuviaDePiedras s3 = new LLuviaDePiedras();
+        Spell s1 = new AtaqueBasico();
+        Spell s2 = new DefensaBasica();
+        Spell s3 = new LanzaHelada();
         s1.setCaster(this);
         s2.setCaster(this);
         s3.setCaster(this);
@@ -220,7 +262,7 @@ public class Player extends Entity {
         ArrayList<String> combatMenu = new ArrayList<>();
         String s1 = "1.- Hechizos";
         String s2 = "2.- Bolsa de pociones";
-        String s3 = "3.- Tesoros";
+        String s3 = "3.- Objetos";
         String s4 = "4.- Grimorio";
         combatMenu.add(s1);
         combatMenu.add(s2);
@@ -244,10 +286,19 @@ public class Player extends Entity {
             if (this.potions[i] != null) {
                 potionsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + this.potions[i].getName() + Console.DEFAULT_COLOR + " [" + this.potions[i].getDesc() + "]");
             } else {
-                potionsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + "Vacio");
+                potionsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + "[Vacio]");
             }
         }
         potionsMenu.add(Console.DEFAULT_COLOR + (maxPotions + 1) + ".- Volver");
         return potionsMenu;
+    }
+
+    private ArrayList<String> getPotionsDiscardMenu(Potion extraPotion) {
+        ArrayList<String> potionsDiscardMenu = new ArrayList<>();
+        for (int i = 0; i < potions.length; i++) {
+            potionsDiscardMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + this.potions[i].getName() + Console.DEFAULT_COLOR + " [" + this.potions[i].getDesc() + "]");
+        }
+        potionsDiscardMenu.add(Console.DEFAULT_COLOR + (potions.length + 1) + ".- No quiero " + extraPotion.getName() + Console.DEFAULT_COLOR + " [" + extraPotion.getDesc() + "]");
+        return potionsDiscardMenu;
     }
 }

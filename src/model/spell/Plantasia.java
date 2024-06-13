@@ -3,18 +3,19 @@ package model.spell;
 import model.entity.Entity;
 import util.Console;
 
-public class VivaGym  extends Spell {
-    public VivaGym () {
+public class Plantasia extends Spell {
+    public Plantasia() {
         super();
     }
 
     @Override
     void init() {
-        super.name = Console.SPELL_COLOR + "VivaGym" + Console.RESET;
+        super.name = Console.SPELL_COLOR + "Plantasia" + Console.RESET;
         super.damage = 0;
         super.defense = 0;
         super.hits = 0;
-        super.type = Type.NOTYPE;
+        super.heal = 0;
+        super.type = Type.PLANT;
     }
 
     @Override
@@ -27,7 +28,8 @@ public class VivaGym  extends Spell {
 
     @Override
     public String getSummary() {
-        return Console.STATUS_COLOR + "[" + Console.STATUS_COLOR + "]" + Console.RESET;
+        return Console.DEFAULT_COLOR + " [" + Console.STATUS_COLOR + Console.STS_CHAR + Console.DEFAULT_COLOR + "] " +
+                type.getDisplayName();
     }
 
     @Override

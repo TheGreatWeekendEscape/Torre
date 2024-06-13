@@ -3,6 +3,7 @@ package model.entity.enemy;
 import model.spell.AtaqueBasico;
 import model.spell.DefensaBasica;
 import model.spell.Escupitajo;
+import model.spell.Type;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class Llamaga extends Enemy {
         super.dificulty = 1;
         super.maxHp = generateHp(11);
         super.hp = maxHp;
+        super.type = Type.NORMAL;
         generateRepresentation();
         generateSpells();
     }

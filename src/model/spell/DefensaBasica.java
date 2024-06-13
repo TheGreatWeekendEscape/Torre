@@ -15,7 +15,8 @@ public class DefensaBasica extends Spell{
         super.damage = 0;
         super.defense = 3;
         super.hits = 0;
-        super.type = Type.NOTYPE;
+        super.heal = 0;
+        super.type = Type.NORMAL;
     }
 
     @Override
@@ -26,7 +27,8 @@ public class DefensaBasica extends Spell{
 
     @Override
     public String getSummary() {
-        return Console.ARMOR_COLOR + "[" + this.defense + Console.DEF_CHAR + "]" + Console.RESET;
+        return Console.DEFAULT_COLOR + " [" + Console.ARMOR_COLOR + this.defense + Console.DEF_CHAR + Console.DEFAULT_COLOR + "] " +
+                type.getDisplayName();
     }
 
     @Override

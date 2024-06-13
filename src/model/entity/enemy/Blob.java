@@ -3,6 +3,7 @@ package model.entity.enemy;
 import model.spell.AtaqueBasico;
 import model.spell.DefensaBasica;
 import model.spell.Spell;
+import model.spell.Type;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class Blob extends Enemy {
         super.dificulty = 1;
         super.maxHp = generateHp(14);
         super.hp = maxHp;
+        super.type = Type.WATER;
         generateRepresentation();
         generateSpells();
     }

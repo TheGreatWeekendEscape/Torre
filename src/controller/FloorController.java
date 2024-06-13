@@ -8,9 +8,13 @@ import java.util.Random;
 public class FloorController {
 
     private static ArrayList<Floor> mainFloors = generateMainFloors();
-    private static ArrayList<Floor> eventFloors = generateEventFloors();
+    private static ArrayList<Floor> eventFloors;
 
-    public static Floor getMainFloorD() {
+    public static Floor getMainFloor() {
+        return new EventSellpotionsFloor();
+    }
+
+    public static Floor getMainFloor2() {
         Random r = new Random();
         double rand = r.nextDouble() * 100;
         double totalSum = 0;
@@ -24,14 +28,16 @@ public class FloorController {
         return null;
     }
 
+    //Coge un evento random y lo saca del array para que no se repitan entre runs
     public static Floor getEventFloor() {
-        Random r = new Random();
-        return eventFloors.get(r.nextInt(eventFloors.size()));
+        Random rand = new Random();
+        int randIndex = rand.nextInt(eventFloors.size());
+        Floor f = eventFloors.get(randIndex);
+        eventFloors.remove(randIndex);
+        return f;
     }
 
-    public static Floor getMainFloor() {
-        return new EventFloor();
-    }
+
 
     private static ArrayList<Floor> generateMainFloors() {
         ArrayList<Floor> floors = new ArrayList<>();
@@ -43,11 +49,11 @@ public class FloorController {
         return floors;
     }
 
-    private static ArrayList<Floor> generateEventFloors() {
-        ArrayList<Floor> floors = new ArrayList<>();
-        floors.add(new EventPotionsFloor());
-        floors.add(new EventPriestFloor());
-        floors.add(new EventMoneyFloor());
-        return floors;
+    public static void generateEventFloors() {
+        eventFloors = new ArrayList<>();
+        eventFloors.add(new EventPotionsFloor());
+        eventFloors.add(new EventPriestFloor());
+        eventFloors.add(new EventCrowFloor());
+        eventFloors.add(new EventSellpotionsFloor());
     }
 }

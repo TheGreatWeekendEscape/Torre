@@ -1,5 +1,6 @@
 package controller;
 
+import model.entity.Entity;
 import model.entity.Player;
 import model.spell.*;
 
@@ -8,10 +9,10 @@ import java.util.Random;
 
 public class SpellController {
 
-    private static ArrayList<Spell> normalPool = generateSpells();
+    private static ArrayList<Spell> normalPool = generateNormalPool();
 
 
-    public static Spell getNewRandSpell(Player p) {
+    public static Spell getNewRandSpell(Entity p) {
         Random rand = new Random();
         Spell s;
         do {
@@ -20,13 +21,13 @@ public class SpellController {
         return s;
     }
 
-    private static ArrayList<Spell> generateSpells() {
+    private static ArrayList<Spell> generateNormalPool() {
         ArrayList<Spell> generatedSpells = new ArrayList<>();
         generatedSpells.add(new AtaqueBasico());
         generatedSpells.add(new DefensaBasica());
         generatedSpells.add(new Escupitajo());
-        generatedSpells.add(new LLuviaDePiedras());
-        generatedSpells.add(new VivaGym());
+        generatedSpells.add(new Plantasia());
+        generatedSpells.add(new Ascua());
         return generatedSpells;
     }
 }

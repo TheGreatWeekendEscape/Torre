@@ -3,35 +3,34 @@ package model.spell;
 import model.entity.Entity;
 import util.Console;
 
-public class Escupitajo extends Spell {
-
+public class LanzaHelada extends Spell {
 
     @Override
     void init() {
-        super.name = Console.SPELL_COLOR + "Escupitajo" + Console.RESET;
+        super.name = Console.SPELL_COLOR + "Lanza helada" + Console.RESET;
         super.damage = 5;
-        super.defense = 0;
+        super.defense = 5;
         super.hits = 1;
-        super.heal = 2;
-        super.type = Type.WATER;
+        super.heal = 0;
+        super.type = Type.ICE;
     }
 
     @Override
     public void cast(Entity target) {
         int damage = target.getHit(getTotalDamage(target));
-        int healed = super.caster.gainHp(super.heal);
+        caster.gainArmor(this.defense);
         Console.printDamage(super.caster.getName() + " inflige a " + target.getName() + " ", damage);
-        Console.printDefault(super.caster.getName() + " se cura " + healed + " puntos de vida");
+        Console.printArmor(super.caster.getName() + " gana ", super.defense + "");
     }
 
     @Override
     public String getSummary() {
         return Console.DEFAULT_COLOR + " [" + Console.DAMAGE_COLOR + super.damage + Console.DMG_CHAR + Console.DEFAULT_COLOR + "][" +
-               Console.HEALTH_COLOR + super.heal + Console.HP_CHAR + Console.DEFAULT_COLOR + "] " + type.getDisplayName();
+                Console.ARMOR_COLOR + super.defense + Console.DEF_CHAR + Console.DEFAULT_COLOR + "] " + type.getDisplayName();
     }
 
     @Override
     public String getDesc() {
-        return "Inflige " + super.damage + " de daño y te curas " + super.heal + " de vida";
+        return "Inflige " + super.damage + " de daño y gana " + super.defense + " de armadura";
     }
 }
