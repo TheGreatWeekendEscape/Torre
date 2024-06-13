@@ -1,5 +1,6 @@
 package controller;
 
+import model.entity.Entity;
 import model.entity.Player;
 import model.spell.*;
 
@@ -11,7 +12,7 @@ public class SpellController {
     private static ArrayList<Spell> normalPool = generateNormalPool();
 
 
-    public static Spell getNewRandSpell(Player p) {
+    public static Spell getNewRandSpell(Entity p) {
         Random rand = new Random();
         Spell s;
         do {

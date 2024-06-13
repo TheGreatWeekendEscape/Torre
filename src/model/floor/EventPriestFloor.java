@@ -8,8 +8,8 @@ import util.Console;
 
 import java.util.ArrayList;
 
-//Cura o priest spell aleatorio, de momento solo spell
-public class EventPriestFloor  extends Floor {
+//Cura o water spell aleatorio, de momento solo spell
+public class EventPriestFloor extends Floor {
 
     private int healPrice = 40;
     private int spellPrice = 60;
@@ -19,7 +19,7 @@ public class EventPriestFloor  extends Floor {
         Console.printDefault("Te encuentras a un sacerdote que ofrece sus servicios");
         Spell s = SpellController.getNewRandSpell(p);
         boolean priestEnd = false;
-        while(!priestEnd) {
+        while (!priestEnd) {
             Console.printGold(p);
             String priestOption = Console.printMenu(getPriestMenu());
             switch (priestOption) {
@@ -37,6 +37,9 @@ public class EventPriestFloor  extends Floor {
                         priestEnd = true;
                     }
                     break;
+                case "3":
+                    priestEnd = true;
+                    break;
             }
         }
         return false;
@@ -46,6 +49,7 @@ public class EventPriestFloor  extends Floor {
         ArrayList<String> priestMenu = new ArrayList<>();
         priestMenu.add("1.- Descansar y curarse [" + Console.GOLD_COLOR + healPrice + "g" + Console.DEFAULT_COLOR + "]");
         priestMenu.add("2.- Comprar hechizo aleatorio [" + Console.GOLD_COLOR + spellPrice + "g" + Console.DEFAULT_COLOR + "]");
+        priestMenu.add("3.- Ir al siguiente piso");
         return priestMenu;
     }
 }

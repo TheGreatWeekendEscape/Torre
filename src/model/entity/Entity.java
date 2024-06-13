@@ -67,6 +67,15 @@ public abstract class Entity {
         }
     }
 
+    public boolean hasSpell(Spell spell) {
+        for (Spell s : spells) {
+            if (spell.getName().equalsIgnoreCase(s.getName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void resetArmor() {
         this.armor = 0;
     }

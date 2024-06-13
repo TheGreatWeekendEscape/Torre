@@ -1,8 +1,6 @@
 package controller;
 
-import model.potion.PocionDeFuego;
-import model.potion.PocionDeRoca;
-import model.potion.Potion;
+import model.potion.*;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,8 +16,12 @@ public class PotionController {
 
     private static ArrayList<Potion> generatePotions() {
         ArrayList<Potion> generatedPotions = new ArrayList<>();
-        generatedPotions.add(new PocionDeFuego());
+        generatedPotions.add(new CoctelMolotov());
         generatedPotions.add(new PocionDeRoca());
+        generatedPotions.add(new PocionDeFuego());
+        generatedPotions.add(new AguaDeFuente());
+        generatedPotions.add(new PocionDeViento());
+        generatedPotions.add(new JugoDeMago());
         return generatedPotions;
     }
 }

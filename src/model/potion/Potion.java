@@ -1,6 +1,9 @@
 package model.potion;
 
+
 import model.entity.Entity;
+import model.entity.Player;
+import model.entity.enemy.Enemy;
 
 public abstract class Potion {
 
@@ -8,7 +11,7 @@ public abstract class Potion {
     protected String desc;
     protected int quality;
 
-    public abstract void drink(Entity caster, Entity target);
+    public abstract void drink(Player caster, Enemy target);
 
     public String getName() {
         return name;

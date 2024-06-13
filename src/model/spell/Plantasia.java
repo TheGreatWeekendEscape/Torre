@@ -14,6 +14,7 @@ public class Plantasia extends Spell {
         super.damage = 0;
         super.defense = 0;
         super.hits = 0;
+        super.heal = 0;
         super.type = Type.PLANT;
     }
 

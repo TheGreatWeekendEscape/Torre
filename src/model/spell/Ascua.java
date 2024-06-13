@@ -11,6 +11,7 @@ public class Ascua extends Spell {
         super.damage = 10;
         super.defense = 0;
         super.hits = 1;
+        super.heal = 0;
         super.type = Type.FIRE;
     }
 

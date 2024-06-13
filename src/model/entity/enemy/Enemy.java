@@ -9,29 +9,32 @@ import java.util.Random;
 
 public abstract class Enemy extends Entity {
 
-    private Spell spellDrop;
+    private int spellDropChance; // %
     private int keyChance; // %
+    private Spell spellDrop;
     protected String displayName;
     protected int dificulty;
     Random rand = new Random();
 
     public Enemy () {
         super.armor = 0;
+        spellDropChance = 1; //%
+        keyChance = 15; //%
         init();
         prepareDrops();
     }
 
     private void prepareDrops() {
-        keyChance = 85;
+        keyChance = 15;
         super.gold = rand.nextInt(15) * dificulty;
         int i = rand.nextInt(100);
 
-        if (i < keyChance) {
+        if (i > keyChance) {
             super.keys = 0;
         } else {
             super.keys = 1;
         }
-        if (i == 39) { //Any number works here its 1% chance
+        if (i < spellDropChance) { //Any number works here its 1% chance
             spellDrop = getRandSpell();
         } else {
             spellDrop = null;
@@ -54,6 +57,22 @@ public abstract class Enemy extends Entity {
 
     public Spell getSpellDrop() {
         return spellDrop;
+    }
+
+    public int getSpellDropChance() {
+        return spellDropChance;
+    }
+
+    public void setSpellDropChance(int spellDropChance) {
+        this.spellDropChance = spellDropChance;
+    }
+
+    public int getKeyChance() {
+        return keyChance;
+    }
+
+    public void setKeyChance(int keyChance) {
+        this.keyChance = keyChance;
     }
 
     abstract void generateSpells();

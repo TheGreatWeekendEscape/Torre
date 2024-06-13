@@ -15,6 +15,7 @@ public class DefensaBasica extends Spell{
         super.damage = 0;
         super.defense = 3;
         super.hits = 0;
+        super.heal = 0;
         super.type = Type.NORMAL;
     }
 

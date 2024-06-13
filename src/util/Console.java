@@ -2,8 +2,10 @@ package util;
 
 import model.entity.Entity;
 import model.entity.Player;
+import model.relic.Relic;
 import model.spell.Spell;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class Console {
     public static final String DEF_CHAR = "#";
     public static final String DMG_CHAR = "‡";
     public static final String STS_CHAR = "*";
+    public static final String HP_CHAR = "+";
 
     //Reset
     public static final String RESET = "\u001B[0m";
@@ -76,6 +79,8 @@ public class Console {
     public static final String NORMAL_COLOR = WHITE;
     public static final String PLANT_COLOR = GREEN;
     public static final String ROCK_COLOR = YELLOW;
+    public static final String ICE_COLOR = CYAN;
+    public static final String HEALTH_COLOR = BRIGHT_GREEN;
 
     public static void printDefault(String message) {
         System.out.print(Console.DEFAULT_COLOR + message + DEFAULT_COLOR + " ..." + RESET);
@@ -163,6 +168,18 @@ public class Console {
         }
         System.out.print("...");
         sc.nextLine();
+    }
+
+    public static void printRelics(ArrayList<Relic> relics) {
+        if (relics.isEmpty()) {
+            printDefault("Todavia no tienes ningun objeto");
+        } else {
+            for (Relic relic : relics) {
+                System.out.println(DEFAULT_COLOR + "- " + relic.getName() + DEFAULT_COLOR + ": " + relic.getDesc());
+            }
+            System.out.print("...");
+            sc.nextLine();
+        }
     }
 
     public static void printFightStage(Entity player, Entity enemy) {

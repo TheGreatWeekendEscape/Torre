@@ -8,6 +8,7 @@ public abstract class Spell implements Cloneable{
     protected String name;
     protected int damage;
     protected int defense;
+    protected int heal;
     protected int hits;
     protected Type type;
     protected Entity caster;
@@ -70,6 +71,14 @@ public abstract class Spell implements Cloneable{
 
     public void setCaster(Entity caster) {
         this.caster = caster;
+    }
+
+    public int getHeal() {
+        return heal;
+    }
+
+    public void setHeal(int heal) {
+        this.heal = heal;
     }
 
     public int getTotalDamage(Entity target) {

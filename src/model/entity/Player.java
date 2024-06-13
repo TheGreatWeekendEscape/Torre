@@ -1,15 +1,11 @@
 package model.entity;
 
 import model.entity.enemy.Enemy;
-import model.potion.PocionDeFuego;
-import model.potion.PocionDeRoca;
-import model.potion.Potion;
-import model.relic.Manguitos;
+import model.potion.*;
 import model.relic.Relic;
 import model.spell.*;
 import util.Console;
 
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 
 public class Player extends Entity {
@@ -84,7 +80,8 @@ public class Player extends Entity {
                     }
                     nextTurn = false;
                     break;
-                case "3": //Relics
+                case "3": //Objetos
+                    Console.printRelics(relics);
                     nextTurn = false;
                     break;
                 case "4": //Grimorio
@@ -181,15 +178,6 @@ public class Player extends Entity {
         return false;
     }
 
-    public boolean hasSpell(Spell spell) {
-        for (Spell s : spells) {
-            if (spell.getName().equalsIgnoreCase(s.getName())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void useKey() {
         this.keys -= 1;
         if (keys < 0) {
@@ -236,16 +224,16 @@ public class Player extends Entity {
     //A partir de aqui metodos privados
 
     private void generatePotions() {
-        this.potions[0] = new PocionDeFuego();
-        this.potions[1] = new PocionDeFuego();
-        this.potions[2] = null;
+        this.potions[0] = new JugoDeMago();
+        this.potions[1] = new ElixirDeSuerte();
+        this.potions[2] = new CoctelMolotov();
     }
 
     private void generatePlayerSpells() {
         super.spells = new ArrayList<>();
-        AtaqueBasico s1 = new AtaqueBasico();
-        DefensaBasica s2 = new DefensaBasica();
-        Plantasia s3 = new Plantasia();
+        Spell s1 = new AtaqueBasico();
+        Spell s2 = new DefensaBasica();
+        Spell s3 = new LanzaHelada();
         s1.setCaster(this);
         s2.setCaster(this);
         s3.setCaster(this);
@@ -258,7 +246,7 @@ public class Player extends Entity {
         ArrayList<String> combatMenu = new ArrayList<>();
         String s1 = "1.- Hechizos";
         String s2 = "2.- Bolsa de pociones";
-        String s3 = "3.- Tesoros";
+        String s3 = "3.- Objetos";
         String s4 = "4.- Grimorio";
         combatMenu.add(s1);
         combatMenu.add(s2);
@@ -282,7 +270,7 @@ public class Player extends Entity {
             if (this.potions[i] != null) {
                 potionsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + this.potions[i].getName() + Console.DEFAULT_COLOR + " [" + this.potions[i].getDesc() + "]");
             } else {
-                potionsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + "Vacio");
+                potionsMenu.add(Console.DEFAULT_COLOR + (i + 1) + ".- " + "[Vacio]");
             }
         }
         potionsMenu.add(Console.DEFAULT_COLOR + (maxPotions + 1) + ".- Volver");

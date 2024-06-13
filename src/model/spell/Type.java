@@ -10,7 +10,8 @@ public enum Type {
     DARKNESS(Console.DEFAULT_COLOR + "[" + Console.DARKNESS_COLOR + "OSCURIDAD" + Console.DEFAULT_COLOR + "]"),
     WATER(Console.DEFAULT_COLOR + "[" + Console.WATER_COLOR + "AGUA" + Console.DEFAULT_COLOR + "]"),
     ROCK(Console.DEFAULT_COLOR + "[" + Console.ROCK_COLOR + "ROCA" + Console.DEFAULT_COLOR + "]"),
-    PLANT(Console.DEFAULT_COLOR + "[" + Console.PLANT_COLOR + "PLANTA" + Console.DEFAULT_COLOR + "]");
+    PLANT(Console.DEFAULT_COLOR + "[" + Console.PLANT_COLOR + "PLANTA" + Console.DEFAULT_COLOR + "]"),
+    ICE(Console.DEFAULT_COLOR + "[" + Console.ICE_COLOR + "HIELO" + Console.DEFAULT_COLOR + "]");
 
 
     String displayName;
@@ -27,6 +28,12 @@ public enum Type {
         if (this == Type.FIRE && type == Type.PLANT) {
             return true;
         }
+        if (this == Type.ICE && type == Type.ROCK) {
+            return true;
+        }
+        if (this == Type.WATER && type == Type.FIRE) {
+            return true;
+        }
         if (this == Type.WIND && type == Type.FIRE) {
             return true;
         }
@@ -41,6 +48,12 @@ public enum Type {
 
     public boolean isBadVs(Type type) {
         if (this == Type.FIRE && type == Type.WATER) {
+            return true;
+        }
+        if (this == Type.ICE && type == Type.FIRE) {
+            return true;
+        }
+        if (this == Type.WATER && type == Type.PLANT) {
             return true;
         }
         if (this == Type.WIND && type == Type.ROCK) {
