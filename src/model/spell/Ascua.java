@@ -3,19 +3,15 @@ package model.spell;
 import model.entity.Entity;
 import util.Console;
 
-public class Escupitajo extends Spell {
-
-    public Escupitajo () {
-        super();
-    }
+public class Ascua extends Spell {
 
     @Override
     void init() {
-        super.name = Console.SPELL_COLOR + "Escupitajo" + Console.RESET;
-        super.damage = 5;
+        super.name = Console.SPELL_COLOR + "Ascua" + Console.RESET;
+        super.damage = 10;
         super.defense = 0;
         super.hits = 1;
-        super.type = Type.WATER;
+        super.type = Type.FIRE;
     }
 
     @Override

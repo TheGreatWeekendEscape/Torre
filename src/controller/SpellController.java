@@ -25,8 +25,8 @@ public class SpellController {
         generatedSpells.add(new AtaqueBasico());
         generatedSpells.add(new DefensaBasica());
         generatedSpells.add(new Escupitajo());
-        generatedSpells.add(new LLuviaDePiedras());
-        generatedSpells.add(new VivaGym());
+        generatedSpells.add(new Plantasia());
+        generatedSpells.add(new Ascua());
         return generatedSpells;
     }
 }

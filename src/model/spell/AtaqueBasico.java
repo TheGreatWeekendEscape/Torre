@@ -11,18 +11,19 @@ public class AtaqueBasico extends Spell {
         super.damage = 3;
         super.defense = 0;
         super.hits = 1;
-        super.type = Type.NOTYPE;
+        super.type = Type.NORMAL;
     }
 
     @Override
     public void cast(Entity target) {
-        int damage = target.getHit(getTotalDamage());
+        int damage = target.getHit(getTotalDamage(target));
         Console.printDamage(super.caster.getName() + " inflige a " + target.getName() + " ", damage);
     }
 
     @Override
     public String getSummary() {
-        return Console.DAMAGE_COLOR + "[" + super.damage + Console.DMG_CHAR + "]" + Console.RESET;
+        return Console.DEFAULT_COLOR + " [" + Console.DAMAGE_COLOR + super.damage + Console.DMG_CHAR + Console.DEFAULT_COLOR + "] " +
+                type.getDisplayName();
     }
 
     @Override

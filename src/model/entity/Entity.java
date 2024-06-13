@@ -1,6 +1,7 @@
 package model.entity;
 
 import model.spell.Spell;
+import model.spell.Type;
 import util.Console;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public abstract class Entity {
     protected int gold;
     protected int keys;
     protected String[] representation;
+    protected Type type;
 
     public int fullHeal() {
         return gainHp(maxHp);
@@ -144,6 +146,14 @@ public abstract class Entity {
 
     public void setRepresentation(String[] representation) {
         this.representation = representation;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public abstract void addSpell(Spell s);

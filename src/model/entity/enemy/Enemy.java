@@ -2,6 +2,7 @@ package model.entity.enemy;
 
 import model.entity.Entity;
 import model.spell.Spell;
+import model.spell.Type;
 
 import java.util.Arrays;
 import java.util.Random;

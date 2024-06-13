@@ -84,10 +84,10 @@ public class Player extends Entity {
                     }
                     nextTurn = false;
                     break;
-                case "3": //Objects
+                case "3": //Relics
                     nextTurn = false;
                     break;
-                case "4": //Info
+                case "4": //Grimorio
                     Console.printGrimoire(this, enemySpell);
                     nextTurn = false;
                     break;
@@ -237,7 +237,7 @@ public class Player extends Entity {
 
     private void generatePotions() {
         this.potions[0] = new PocionDeFuego();
-        this.potions[1] = null;
+        this.potions[1] = new PocionDeFuego();
         this.potions[2] = null;
     }
 
@@ -245,7 +245,7 @@ public class Player extends Entity {
         super.spells = new ArrayList<>();
         AtaqueBasico s1 = new AtaqueBasico();
         DefensaBasica s2 = new DefensaBasica();
-        LLuviaDePiedras s3 = new LLuviaDePiedras();
+        Plantasia s3 = new Plantasia();
         s1.setCaster(this);
         s2.setCaster(this);
         s3.setCaster(this);

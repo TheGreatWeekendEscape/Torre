@@ -1,6 +1,7 @@
 package model.spell;
 
 import model.entity.Entity;
+import util.Console;
 
 public abstract class Spell implements Cloneable{
 
@@ -71,8 +72,17 @@ public abstract class Spell implements Cloneable{
         this.caster = caster;
     }
 
-    public int getTotalDamage() {
-        return this.damage * this.hits;
+    public int getTotalDamage(Entity target) {
+        int damage = this.damage * this.hits;
+        if (this.type.isGoodVs(target.getType())) {
+            damage *= 1.5;
+            Console.printDefault(this.name + Console.DEFAULT_COLOR + " es muy efectivo contra " + target.getName());
+        }
+        if (this.type.isBadVs(target.getType())) {
+            damage *= 0.5;
+            Console.printDefault(this.name + Console.DEFAULT_COLOR + " no es muy efectivo contra " + target.getName());
+        }
+        return damage;
     }
 
     public Spell clone() {

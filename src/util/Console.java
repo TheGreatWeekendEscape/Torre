@@ -69,6 +69,13 @@ public class Console {
     public static final String POTION_COLOR = BRIGHT_RED;
     public static final String GOLD_COLOR = YELLOW;
     public static final String KEY_COLOR = WHITE;
+    public static final String FIRE_COLOR = RED;
+    public static final String WIND_COLOR = BRIGHT_WHITE;
+    public static final String WATER_COLOR = BRIGHT_BLUE;
+    public static final String DARKNESS_COLOR = BRIGHT_PURPLE;
+    public static final String NORMAL_COLOR = WHITE;
+    public static final String PLANT_COLOR = GREEN;
+    public static final String ROCK_COLOR = YELLOW;
 
     public static void printDefault(String message) {
         System.out.print(Console.DEFAULT_COLOR + message + DEFAULT_COLOR + " ..." + RESET);
@@ -149,10 +156,10 @@ public class Console {
 
     public static void printGrimoire(Entity player, Spell enemySpell) {
         System.out.println(UNDERLINE  + DEFAULT_COLOR + "Hechizo del enemigo: " + RESET);
-        System.out.println(DEFAULT_COLOR + "-" + enemySpell.getName() + DEFAULT_COLOR + ": " + enemySpell.getDesc());
+        System.out.println(DEFAULT_COLOR + "- " + enemySpell.getType().getDisplayName() + " " + enemySpell.getName() + DEFAULT_COLOR + ": " + enemySpell.getDesc());
         System.out.println(UNDERLINE + DEFAULT_COLOR + "Tus hechizos: " + RESET);
         for (Spell s : player.getSpells()) {
-            System.out.println("-" + s.getName() + DEFAULT_COLOR + ": " + s.getDesc());
+            System.out.println(DEFAULT_COLOR + "- " + s.getType().getDisplayName() + " " + s.getName() + DEFAULT_COLOR + ": " + s.getDesc());
         }
         System.out.print("...");
         sc.nextLine();
